@@ -1,4 +1,7 @@
 # Recipe to install the letsencrypt tools from GitHub
+#
+# Initially create certificate with letsencrypt-auto
+
 directory "#{node[:letsencrypt][:dir]}" do
   action :create
   mode 0755
@@ -14,9 +17,8 @@ git 'letsencrypt' do
   user 'root'
 end
 
-#TODO This has to be a template with the correct path to letsencrypt
-cookbook_file '/usr/local/bin/renew_ssl_cert.sh' do
-  source 'renew_ssl_cert.sh'
+template '/usr/local/bin/renew_ssl_cert.sh' do
+  source 'renew_ssl_cert.sh.erb'
   owner 'root'
   group 'root'
   mode '0755'
