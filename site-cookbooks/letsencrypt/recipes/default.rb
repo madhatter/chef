@@ -7,12 +7,14 @@ directory "#{node[:letsencrypt][:dir]}" do
 end
 
 git 'letsencrypt' do
-  repository "#{node[:letsencrypt][:dir]}"
-  destination '/usr/local/src/letsencrypt'
-  checkout_branch 'master'
+  repository 'https://github.com/letsencrypt/letsencrypt.git'
+  destination "#{node[:letsencrypt][:dir]}"
+  reference 'master'
   action :sync
+  user 'root'
 end
 
+#TODO This has to be a template with the correct path to letsencrypt
 cookbook_file '/usr/local/bin/renew_ssl_cert.sh' do
   source 'renew_ssl_cert.sh'
   owner 'root'
