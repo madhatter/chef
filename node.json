@@ -1,7 +1,5 @@
 {
   "run_list": [
-	  "recipe[helloworld]",
-	  "recipe[letsencrypt::install]",
-	  "recipe[irssi]"
+	  "recipe[letsencrypt]"
   ]
 }

@@ -1,0 +1,45 @@
+[user]
+  email = <%= @node[:git][:email] %>
+  name = <%= @node[:git][:user] %>
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = red reverse
+    local = blue
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    st = status -s
+    cl = clone
+    ci = commit
+    cm = commit -m
+	co = checkout
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[push]
+    default = tracking
+[pull]
+    default = current
+	rebase = true
+[diff]
+  memonicprefix = true
+[core]
+	excludesfile = /home/awarnecke/.gitignore
+	whitespace = trailing-space,space-before-tab
+[apply]
+	whitespace = fix
