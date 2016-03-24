@@ -1,5 +1,5 @@
 #
-# Cookbook Name: domestic
+# Cookbook Name: base
 # Recipe: git
 #
 # Installs and sets up git

@@ -1,6 +1,6 @@
 # Recipe to install the letsencrypt tools from GitHub
 #
-# Initially create certificate with letsencrypt-auto
+# Initially create certificate with letsencrypt-auto certonly -d <domain> --debug
 
 directory "#{node[:letsencrypt][:dir]}" do
   action :create
