@@ -1,18 +1,15 @@
 #
 # Cookbook Name: docker
-# Recipe: default
+# Recipe: registry
 #
 # Installs base docker setup
 #
 
-package 'docker' do
-  action :install
-end
-
-template '/etc/conf.d/docker' do
-  source 'docker_conf.erb'
+template '/etc/systemd/system/docker-registry.service' do
+  source 'docker_registry_unit.erb'
   owner 'root'
   group 'root'
   mode '0644'
   action :create
 end
+
