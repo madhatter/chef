@@ -1,6 +1,14 @@
 {
+  {
+  "normal": {
+    "docker": {
+      "registry_image": "vdavy/registry-arm"
+    }
+  },
   "run_list": [
-	"recipe[base]"
+	"recipe[base]",
+    "recipe[docker]",
+    "recipe[docker::registry]"
   ],
   "automatic": {
     "ipaddress": "odroid"
