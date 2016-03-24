@@ -1,5 +1,4 @@
 {
-  {
   "normal": {
     "docker": {
       "registry_image": "vdavy/registry-arm"
