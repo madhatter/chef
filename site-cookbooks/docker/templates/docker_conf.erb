@@ -1,0 +1,1 @@
+DOCKER_OPTS="<%- node[:docker][:insecure_registries].each do |registry| -%>--insecure-registry <%= registry -%>:5000 <%- end -%>"
