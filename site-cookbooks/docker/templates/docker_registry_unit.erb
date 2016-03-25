@@ -10,6 +10,6 @@ ExecStartPre=/usr/bin/docker pull <%= node[:docker][:registry_image] %>
 ExecStartPre=-/usr/bin/docker rm ${UNIT}
 ExecStart=/usr/bin/docker run --name ${UNIT} \
   -p 5000:5000 \
-  --volume /docker_repo:/tmp/registry \
+  --volume /docker_repo:/var/lib/registry \
   <%= node[:docker][:registry_image] %>
 ExecStop=/usr/bin/docker stop ${UNIT}
