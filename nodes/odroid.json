@@ -2,7 +2,10 @@
   "normal": {
     "docker": {
       "registry_image": "vdavy/registry-arm"
-    }
+    },
+	"git": {
+		"user": "madhatter_test"
+	}
   },
   "run_list": [
 	"recipe[base]",
