@@ -5,7 +5,7 @@
 # Installs and sets up git
 #
 
-include_recipe base::user
+include_recipe 'base::user'
 
 package 'git' do
   action :install
