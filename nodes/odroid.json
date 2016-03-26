@@ -179,23 +179,23 @@
         "free": "0kB"
       },
       "total": "1759764kB",
-      "free": "139300kB",
-      "buffers": "80148kB",
-      "cached": "1095584kB",
-      "active": "723460kB",
-      "inactive": "623912kB",
-      "dirty": "204kB",
-      "writeback": "0kB",
-      "anon_pages": "171692kB",
-      "mapped": "42048kB",
-      "slab": "197356kB",
-      "slab_reclaimable": "182844kB",
-      "slab_unreclaim": "14512kB",
-      "page_tables": "1776kB",
+      "free": "67060kB",
+      "buffers": "82284kB",
+      "cached": "1112512kB",
+      "active": "724908kB",
+      "inactive": "697776kB",
+      "dirty": "372kB",
+      "writeback": "4kB",
+      "anon_pages": "227716kB",
+      "mapped": "42440kB",
+      "slab": "194868kB",
+      "slab_reclaimable": "180292kB",
+      "slab_unreclaim": "14576kB",
+      "page_tables": "1888kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "879880kB",
-      "committed_as": "743500kB",
+      "committed_as": "724984kB",
       "vmalloc_total": "1048576kB",
       "vmalloc_used": "122668kB",
       "vmalloc_chunk": "886072kB"
@@ -247,13 +247,13 @@
       },
       "/dev/mmcblk0p1": {
         "kb_size": "61256732",
-        "kb_used": "4408136",
-        "kb_available": "53713876",
+        "kb_used": "4558152",
+        "kb_available": "53563860",
         "percent_used": "8%",
         "mount": "/",
         "total_inodes": "3899392",
-        "inodes_used": "210216",
-        "inodes_available": "3689176",
+        "inodes_used": "210330",
+        "inodes_available": "3689062",
         "inodes_percent_used": "6%",
         "fs_type": "ext4",
         "mount_options": [
@@ -551,9 +551,9 @@
             }
           ]
         },
-        "vethfcb9f2a": {
-          "type": "vethfcb9f",
-          "number": "2a",
+        "vethcd47a10": {
+          "type": "vethcd47a1",
+          "number": "0",
           "mtu": "1500",
           "flags": [
             "BROADCAST",
@@ -563,10 +563,10 @@
           ],
           "encapsulation": "Ethernet",
           "addresses": {
-            "D2:5F:2B:10:24:89": {
+            "8E:DE:96:73:34:AC": {
               "family": "lladdr"
             },
-            "fe80::d05f:2bff:fe10:2489": {
+            "fe80::8cde:96ff:fe73:34ac": {
               "family": "inet6",
               "prefixlen": "64",
               "scope": "Link"
@@ -591,15 +591,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "18892",
-              "packets": "232",
+              "bytes": "20500",
+              "packets": "250",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "18892",
-              "packets": "232",
+              "bytes": "20500",
+              "packets": "250",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -609,16 +609,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "18206230",
-              "packets": "202900",
+              "bytes": "19827980",
+              "packets": "226061",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "990872290",
-              "packets": "773060",
+              "bytes": "1151536079",
+              "packets": "882748",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -644,32 +644,32 @@
           },
           "docker0": {
             "rx": {
-              "bytes": "3356225",
-              "packets": "63447",
+              "bytes": "4549957",
+              "packets": "85911",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "474352609",
-              "packets": "73022",
+              "bytes": "628869661",
+              "packets": "98879",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             }
           },
-          "vethfcb9f2a": {
+          "vethcd47a10": {
             "rx": {
-              "bytes": "1550348",
-              "packets": "23105",
+              "bytes": "1507650",
+              "packets": "22457",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "154951487",
-              "packets": "27055",
+              "bytes": "154878836",
+              "packets": "25852",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -788,12 +788,12 @@
         },
         "/dev/mmcblk0p1": {
           "kb_size": "61256732",
-          "kb_used": "4408136",
-          "kb_available": "53713876",
+          "kb_used": "4558136",
+          "kb_available": "53563876",
           "percent_used": "8%",
           "total_inodes": "3899392",
-          "inodes_used": "210216",
-          "inodes_available": "3689176",
+          "inodes_used": "210330",
+          "inodes_available": "3689062",
           "inodes_percent_used": "6%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1027,12 +1027,12 @@
         },
         "/": {
           "kb_size": "61256732",
-          "kb_used": "4408136",
-          "kb_available": "53713876",
+          "kb_used": "4558136",
+          "kb_available": "53563876",
           "percent_used": "8%",
           "total_inodes": "3899392",
-          "inodes_used": "210216",
-          "inodes_available": "3689176",
+          "inodes_used": "210330",
+          "inodes_available": "3689062",
           "inodes_percent_used": "6%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1462,13 +1462,13 @@
         "/dev/mmcblk0p1,/": {
           "device": "/dev/mmcblk0p1",
           "kb_size": "61256732",
-          "kb_used": "4408136",
-          "kb_available": "53713876",
+          "kb_used": "4558136",
+          "kb_available": "53563876",
           "percent_used": "8%",
           "mount": "/",
           "total_inodes": "3899392",
-          "inodes_used": "210216",
-          "inodes_available": "3689176",
+          "inodes_used": "210330",
+          "inodes_available": "3689062",
           "inodes_percent_used": "6%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2431,11 +2431,11 @@
       }
     },
     "current_user": "root",
-    "ohai_time": 1458938237.0796351,
-    "uptime_seconds": 175195,
-    "uptime": "2 days 00 hours 39 minutes 55 seconds",
-    "idletime_seconds": 690368,
-    "idletime": "7 days 23 hours 46 minutes 08 seconds",
+    "ohai_time": 1458940108.6669662,
+    "uptime_seconds": 177067,
+    "uptime": "2 days 01 hours 11 minutes 07 seconds",
+    "idletime_seconds": 697790,
+    "idletime": "8 days 01 hours 49 minutes 50 seconds",
     "chef_packages": {
       "chef": {
         "version": "12.8.1",
