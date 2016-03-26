@@ -1,8 +1,0 @@
-{
-  "run_list": [
-	"recipe[docker]"
-  ],
-  "automatic": {
-    "ipaddress": "localhost"
-  }
-}
