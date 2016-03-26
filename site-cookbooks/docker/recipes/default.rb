@@ -23,3 +23,20 @@ template '/etc/conf.d/docker' do
   mode '0644'
   action :create
 end
+
+# Remove all stopped containers once in a while
+cron 'Remove old docker containers' do
+  command 'docker ps -q | xargs docker stop || docker ps -a -q | xargs docker rm'
+  minute '0'
+  hour '10,22'
+  weekday '1'
+  user 'root'
+end
+
+cron 'Remove dangling docker images' do
+  command  'docker images -q -f dangling=true | xargs docker rmi'
+  minute '0'
+  hour '9,21'
+  weekday '*'
+  user 'root'
+end
