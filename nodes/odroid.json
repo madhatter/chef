@@ -2475,6 +2475,7 @@
   "run_list": [
     "recipe[base]",
     "recipe[docker]",
-    "recipe[docker::registry]"
+    "recipe[docker::registry]",
+    "recipe[tor::hotspot]"
   ]
 }
