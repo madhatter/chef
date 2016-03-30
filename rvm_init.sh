@@ -6,4 +6,5 @@ unset GEM_HOME
 wget https://github.com/ruby/ruby/commit/801e1fe46d83c856844ba18ae4751478c59af0d1.diff -O openssl.patch
 rvm install --patch ./openssl.patch 2.1.5
 gem install chef
+gem install knife-solo_data_bag
 
