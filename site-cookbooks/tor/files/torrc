@@ -1,0 +1,11 @@
+AutomapHostsSuffixes .onion,.exit
+AutomapHostsOnResolve 1
+TransPort 9040
+TransListenAddress 10.10.0.1
+DNSPort 53
+DNSListenAddress 10.10.0.1
+User tor
+Log notice syslog
+DataDirectory /var/lib/tor
+BridgeRelay 0
+PublishServerDescriptor 0

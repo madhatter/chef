@@ -19,3 +19,49 @@ template '/etc/hostapd/hostapd.conf' do
   variables(:wifi_secret => wifi_secret['tor'])
   action :create
 end 
+
+cookbook_file '/etc/systemd/system/openwifi.service' do
+  source 'openwifi.service'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
+cookbook_file '/etc/tor/torrc' do
+  source 'torrc'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
+directory '/etc/systemd/system/tor.service.d' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+cookbook_file '/etc/systemd/system/tor.service.d/start-as-root.conf' do
+  source 'tor_start-as-root.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
+execute 'sysctl reload' do
+  command 'sysctl --system'
+  action :nothing
+end
+
+cookbook_file '/etc/sysctl.d/99-sysctl.conf' do
+  source 'sysctl.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+  notifies :run, 'execute[sysctl reload]', :immediately
+end
+
