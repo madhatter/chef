@@ -1,2 +1,8 @@
+SITE
+  remote: https://supermarket.getchef.com/api/v1
+  specs:
+    iptables (2.2.0)
+
 DEPENDENCIES
+  iptables (~> 2.2.0)
 
