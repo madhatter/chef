@@ -127,23 +127,23 @@
         "free": "0kB"
       },
       "total": "1760000kB",
-      "free": "367904kB",
-      "buffers": "57408kB",
-      "cached": "1048196kB",
-      "active": "825156kB",
-      "inactive": "387872kB",
-      "dirty": "24kB",
+      "free": "302268kB",
+      "buffers": "82520kB",
+      "cached": "1070936kB",
+      "active": "845324kB",
+      "inactive": "414044kB",
+      "dirty": "236kB",
       "writeback": "0kB",
-      "anon_pages": "107376kB",
-      "mapped": "19900kB",
-      "slab": "106180kB",
-      "slab_reclaimable": "95560kB",
-      "slab_unreclaim": "10620kB",
-      "page_tables": "832kB",
+      "anon_pages": "105980kB",
+      "mapped": "21120kB",
+      "slab": "125508kB",
+      "slab_reclaimable": "114700kB",
+      "slab_unreclaim": "10808kB",
+      "page_tables": "872kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "880000kB",
-      "committed_as": "190472kB",
+      "committed_as": "187676kB",
       "vmalloc_total": "1048576kB",
       "vmalloc_used": "122496kB",
       "vmalloc_chunk": "888828kB"
@@ -195,13 +195,13 @@
       },
       "/dev/mmcblk0p1": {
         "kb_size": "61256732",
-        "kb_used": "4876784",
-        "kb_available": "53245228",
+        "kb_used": "4889460",
+        "kb_available": "53232552",
         "percent_used": "9%",
         "mount": "/",
         "total_inodes": "3899392",
-        "inodes_used": "191494",
-        "inodes_available": "3707898",
+        "inodes_used": "193169",
+        "inodes_available": "3706223",
         "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
@@ -400,7 +400,9 @@
           },
           "state": "up",
           "arp": {
+            "192.168.0.4": "00:d9:d1:a9:e2:5a",
             "192.168.0.1": "c0:4a:00:fc:21:ca",
+            "37.4.49.98": "c0:4a:00:fc:21:ca",
             "192.168.0.101": "28:b2:bd:cb:45:12"
           },
           "routes": [
@@ -460,15 +462,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "13444",
-              "packets": "169",
+              "bytes": "14884",
+              "packets": "187",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "13444",
-              "packets": "169",
+              "bytes": "14884",
+              "packets": "187",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -478,16 +480,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1090155",
-              "packets": "9745",
+              "bytes": "4161959",
+              "packets": "21775",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "40950580",
-              "packets": "35772",
+              "bytes": "70180353",
+              "packets": "183773",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -623,12 +625,12 @@
         },
         "/dev/mmcblk0p1": {
           "kb_size": "61256732",
-          "kb_used": "4876784",
-          "kb_available": "53245228",
+          "kb_used": "4889460",
+          "kb_available": "53232552",
           "percent_used": "9%",
           "total_inodes": "3899392",
-          "inodes_used": "191494",
-          "inodes_available": "3707898",
+          "inodes_used": "193169",
+          "inodes_available": "3706223",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -861,12 +863,12 @@
         },
         "/": {
           "kb_size": "61256732",
-          "kb_used": "4876784",
-          "kb_available": "53245228",
+          "kb_used": "4889460",
+          "kb_available": "53232552",
           "percent_used": "9%",
           "total_inodes": "3899392",
-          "inodes_used": "191494",
-          "inodes_available": "3707898",
+          "inodes_used": "193169",
+          "inodes_available": "3706223",
           "inodes_percent_used": "5%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1272,13 +1274,13 @@
         "/dev/mmcblk0p1,/": {
           "device": "/dev/mmcblk0p1",
           "kb_size": "61256732",
-          "kb_used": "4876784",
-          "kb_available": "53245228",
+          "kb_used": "4889460",
+          "kb_available": "53232552",
           "percent_used": "9%",
           "mount": "/",
           "total_inodes": "3899392",
-          "inodes_used": "191494",
-          "inodes_available": "3707898",
+          "inodes_used": "193169",
+          "inodes_available": "3706223",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1627,8 +1629,8 @@
     },
     "sessions": {
       "by_session": {
-        "c10": {
-          "session": "c10",
+        "c21": {
+          "session": "c21",
           "uid": "1001",
           "user": "madhatter",
           "seat": null
@@ -1637,7 +1639,7 @@
       "by_user": {
         "madhatter": [
           {
-            "session": "c10",
+            "session": "c21",
             "uid": "1001",
             "user": "madhatter",
             "seat": null
@@ -2180,19 +2182,19 @@
       }
     },
     "current_user": "root",
-    "ohai_time": 1459109595.5731692,
-    "uptime_seconds": 12449,
-    "uptime": "3 hours 27 minutes 29 seconds",
-    "idletime_seconds": 47136,
-    "idletime": "13 hours 05 minutes 36 seconds",
+    "ohai_time": 1459435774.4014518,
+    "uptime_seconds": 338628,
+    "uptime": "3 days 22 hours 03 minutes 48 seconds",
+    "idletime_seconds": 1351117,
+    "idletime": "15 days 15 hours 18 minutes 37 seconds",
     "chef_packages": {
       "chef": {
         "version": "12.8.1",
         "chef_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/chef-12.8.1/lib"
       },
       "ohai": {
-        "version": "8.13.0",
-        "ohai_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/ohai-8.13.0/lib/ohai"
+        "version": "8.12.1",
+        "ohai_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/ohai-8.12.1/lib/ohai"
       }
     },
     "recipes": [
