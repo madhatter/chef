@@ -65,6 +65,12 @@ cookbook_file '/etc/sysctl.d/99-sysctl.conf' do
   notifies :run, 'execute[sysctl reload]', :immediately
 end
 
-iptables_rule 'wlan53' do
-    action :enable
+firewall_rule 'wlan53' do
+  interface 'wlan0'
+  protocol :udp
+  dest_port 53
+  redirect_port 53
+  command :redirect
+  action :create
 end
+

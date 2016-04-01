@@ -2258,7 +2258,6 @@
     }
   },
   "run_list": [
-    "recipe[iptables]",
     "recipe[base]",
     "recipe[docker::registry]",
     "recipe[tor::hotspot]"
