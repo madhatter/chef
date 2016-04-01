@@ -5,6 +5,8 @@
 # Installs base docker setup
 #
 
+include_recipe 'docker'
+
 directory '/docker_repo' do
   owner 'root'
   group 'root'
