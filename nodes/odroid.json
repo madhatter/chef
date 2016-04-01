@@ -2259,6 +2259,7 @@
   },
   "run_list": [
     "recipe[iptables]",
+    "recipe[iptables]",
     "recipe[base]",
     "recipe[docker]",
     "recipe[docker::registry]",
