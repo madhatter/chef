@@ -5,10 +5,18 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-/etc/init.d/nginx stop 
+<% if node['platform_family'] == 'debian' %>
+/etc/init.d/nginx stop
+<% else %>
+systemctl stop nginx
+<% end %>
 <%= node[:letsencrypt][:dir] %>/letsencrypt-auto renew -nvv --standalone > /var/log/letsencrypt/renew.log 2>&1
 LE_STATUS=$?
-/etc/init.d/nginx start 
+<% if node['platform_family'] == 'debian' %>
+/etc/init.d/nginx start
+<% else %>
+systemctl start nginx
+<% end %>
 if [ "$LE_STATUS" != 0 ]; then
     echo Automated renewal failed:
     exit 1
