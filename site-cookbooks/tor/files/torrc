@@ -8,4 +8,8 @@ User tor
 Log notice syslog
 DataDirectory /var/lib/tor
 BridgeRelay 0
+ExitRelay 0
+ExitPolicy reject *:*
 PublishServerDescriptor 0
+#ORPort 9001
+StrictNodes 1
