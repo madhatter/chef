@@ -12,6 +12,28 @@
     ]
   },
   "default": {
+    "iptables": {
+      "iptables_sysconfig": {
+        "IPTABLES_MODULES": "",
+        "IPTABLES_MODULES_UNLOAD": "yes",
+        "IPTABLES_SAVE_ON_STOP": "no",
+        "IPTABLES_SAVE_ON_RESTART": "no",
+        "IPTABLES_SAVE_COUNTER": "no",
+        "IPTABLES_STATUS_NUMERIC": "yes",
+        "IPTABLES_STATUS_VERBOSE": "no",
+        "IPTABLES_STATUS_LINENUMBERS": "yes"
+      },
+      "ip6tables_sysconfig": {
+        "IP6TABLES_MODULES": "",
+        "IP6TABLES_MODULES_UNLOAD": "yes",
+        "IP6TABLES_SAVE_ON_STOP": "no",
+        "IP6TABLES_SAVE_ON_RESTART": "no",
+        "IP6TABLES_SAVE_COUNTER": "no",
+        "IP6TABLES_STATUS_NUMERIC": "yes",
+        "IP6TABLES_STATUS_VERBOSE": "no",
+        "IP6TABLES_STATUS_LINENUMBERS": "yes"
+      }
+    },
     "user": {
       "name": "madhatter"
     },
@@ -127,23 +149,23 @@
         "free": "0kB"
       },
       "total": "1760000kB",
-      "free": "302268kB",
-      "buffers": "82520kB",
-      "cached": "1070936kB",
-      "active": "845324kB",
-      "inactive": "414044kB",
-      "dirty": "236kB",
+      "free": "294636kB",
+      "buffers": "86212kB",
+      "cached": "1073400kB",
+      "active": "847416kB",
+      "inactive": "418052kB",
+      "dirty": "764kB",
       "writeback": "0kB",
-      "anon_pages": "105980kB",
-      "mapped": "21120kB",
-      "slab": "125508kB",
-      "slab_reclaimable": "114700kB",
-      "slab_unreclaim": "10808kB",
-      "page_tables": "872kB",
+      "anon_pages": "105756kB",
+      "mapped": "21572kB",
+      "slab": "126628kB",
+      "slab_reclaimable": "115760kB",
+      "slab_unreclaim": "10868kB",
+      "page_tables": "856kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "880000kB",
-      "committed_as": "187676kB",
+      "committed_as": "188180kB",
       "vmalloc_total": "1048576kB",
       "vmalloc_used": "122496kB",
       "vmalloc_chunk": "888828kB"
@@ -195,13 +217,13 @@
       },
       "/dev/mmcblk0p1": {
         "kb_size": "61256732",
-        "kb_used": "4889460",
-        "kb_available": "53232552",
+        "kb_used": "4892148",
+        "kb_available": "53229864",
         "percent_used": "9%",
         "mount": "/",
         "total_inodes": "3899392",
-        "inodes_used": "193169",
-        "inodes_available": "3706223",
+        "inodes_used": "193800",
+        "inodes_available": "3705592",
         "inodes_percent_used": "5%",
         "fs_type": "ext4",
         "mount_options": [
@@ -462,15 +484,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "14884",
-              "packets": "187",
+              "bytes": "15604",
+              "packets": "196",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "14884",
-              "packets": "187",
+              "bytes": "15604",
+              "packets": "196",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -480,16 +502,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "4161959",
-              "packets": "21775",
+              "bytes": "4492085",
+              "packets": "24031",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "70180353",
-              "packets": "183773",
+              "bytes": "75528553",
+              "packets": "208463",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -625,12 +647,12 @@
         },
         "/dev/mmcblk0p1": {
           "kb_size": "61256732",
-          "kb_used": "4889460",
-          "kb_available": "53232552",
+          "kb_used": "4892148",
+          "kb_available": "53229864",
           "percent_used": "9%",
           "total_inodes": "3899392",
-          "inodes_used": "193169",
-          "inodes_available": "3706223",
+          "inodes_used": "193800",
+          "inodes_available": "3705592",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -863,12 +885,12 @@
         },
         "/": {
           "kb_size": "61256732",
-          "kb_used": "4889460",
-          "kb_available": "53232552",
+          "kb_used": "4892148",
+          "kb_available": "53229864",
           "percent_used": "9%",
           "total_inodes": "3899392",
-          "inodes_used": "193169",
-          "inodes_available": "3706223",
+          "inodes_used": "193800",
+          "inodes_available": "3705592",
           "inodes_percent_used": "5%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1274,13 +1296,13 @@
         "/dev/mmcblk0p1,/": {
           "device": "/dev/mmcblk0p1",
           "kb_size": "61256732",
-          "kb_used": "4889460",
-          "kb_available": "53232552",
+          "kb_used": "4892148",
+          "kb_available": "53229864",
           "percent_used": "9%",
           "mount": "/",
           "total_inodes": "3899392",
-          "inodes_used": "193169",
-          "inodes_available": "3706223",
+          "inodes_used": "193800",
+          "inodes_available": "3705592",
           "inodes_percent_used": "5%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1629,8 +1651,8 @@
     },
     "sessions": {
       "by_session": {
-        "c21": {
-          "session": "c21",
+        "c24": {
+          "session": "c24",
           "uid": "1001",
           "user": "madhatter",
           "seat": null
@@ -1639,7 +1661,7 @@
       "by_user": {
         "madhatter": [
           {
-            "session": "c21",
+            "session": "c24",
             "uid": "1001",
             "user": "madhatter",
             "seat": null
@@ -2182,32 +2204,36 @@
       }
     },
     "current_user": "root",
-    "ohai_time": 1459435774.4014518,
-    "uptime_seconds": 338628,
-    "uptime": "3 days 22 hours 03 minutes 48 seconds",
-    "idletime_seconds": 1351117,
-    "idletime": "15 days 15 hours 18 minutes 37 seconds",
+    "ohai_time": 1459488039.98102,
+    "uptime_seconds": 390894,
+    "uptime": "4 days 12 hours 34 minutes 54 seconds",
+    "idletime_seconds": 1560100,
+    "idletime": "18 days 01 hours 21 minutes 40 seconds",
     "chef_packages": {
       "chef": {
         "version": "12.8.1",
         "chef_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/chef-12.8.1/lib"
       },
       "ohai": {
-        "version": "8.12.1",
-        "ohai_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/ohai-8.12.1/lib/ohai"
+        "version": "8.13.0",
+        "ohai_root": "/home/madhatter/.rvm/gems/ruby-2.1.5/gems/ohai-8.13.0/lib/ohai"
       }
     },
     "recipes": [
+      "iptables",
+      "iptables::default",
       "base",
       "base::default",
       "docker",
       "docker::default",
       "docker::registry",
       "tor::hotspot",
+      "iptables::_package",
       "base::git",
       "base::user"
     ],
     "expanded_run_list": [
+      "iptables::default",
       "base::default",
       "docker::default",
       "docker::registry",
@@ -2217,6 +2243,9 @@
 
     ],
     "cookbooks": {
+      "iptables": {
+        "version": "2.2.0"
+      },
       "base": {
         "version": "0.0.0"
       },
@@ -2229,7 +2258,7 @@
     }
   },
   "run_list": [
-   "recipe[iptables]",
+    "recipe[iptables]",
     "recipe[base]",
     "recipe[docker]",
     "recipe[docker::registry]",
