@@ -65,3 +65,6 @@ cookbook_file '/etc/sysctl.d/99-sysctl.conf' do
   notifies :run, 'execute[sysctl reload]', :immediately
 end
 
+iptables_rule 'wlan53' do
+    action :enable
+end
