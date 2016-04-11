@@ -84,7 +84,7 @@ iptables_ng_rule 'port9040' do
 end
 
 iptables_ng_rule 'masquerade' do
-  chain 'PREROUTING'
+  chain 'POSTROUTING'
   table 'nat'
   rule '-o eth0 -j MASQUERADE'
 end
