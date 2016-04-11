@@ -1,12 +1,8 @@
 SITE
   remote: https://supermarket.getchef.com/api/v1
   specs:
-    chef-sugar (3.3.0)
-    firewall (2.5.0)
-      chef-sugar (>= 0.0.0)
-    iptables (2.2.0)
+    iptables-ng (2.2.8)
 
 DEPENDENCIES
-  firewall (~> 2.5.0)
-  iptables (~> 2.2.0)
+  iptables-ng (~> 2.2.8)
 

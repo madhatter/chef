@@ -14,5 +14,4 @@ site 'https://supermarket.getchef.com/api/v1'
 #   :git => 'https://github.com/findsyou/cookbooks',
 #   :ref => 'postgresql-improvements'
 
-cookbook 'iptables', '~> 2.2.0'
-cookbook 'firewall', '~> 2.5.0'
+cookbook 'iptables-ng', '~> 2.2.8'
