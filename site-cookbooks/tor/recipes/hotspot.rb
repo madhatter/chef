@@ -65,8 +65,26 @@ cookbook_file '/etc/sysctl.d/99-sysctl.conf' do
   notifies :run, 'execute[sysctl reload]', :immediately
 end
 
+iptables_ng_rule 'wlan_accept' do
+  chain 'FORWARD'
+  table 'filter'
+  rule '-i wlan0 -j ACCEPT'
+end
+
 iptables_ng_rule 'port53' do
   chain 'PREROUTING'
   table 'nat'
   rule '-i wlan0 -p udp -m udp --dport 53 -j REDIRECT --to-ports 53'
+end
+
+iptables_ng_rule 'port9040' do
+  chain 'PREROUTING'
+  table 'nat'
+  rule '-i wlan0 -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REDIRECT --to-ports 9040'
+end
+
+iptables_ng_rule 'masquerade' do
+  chain 'PREROUTING'
+  table 'nat'
+  rule '-o eth0 -j MASQUERADE'
 end
