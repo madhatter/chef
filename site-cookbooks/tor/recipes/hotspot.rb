@@ -88,3 +88,23 @@ iptables_ng_rule 'masquerade' do
   table 'nat'
   rule '-o eth0 -j MASQUERADE'
 end
+
+service 'iptables' do
+  action [:enable, :start]
+end
+
+service 'openwifi' do
+  action [:enable, :start]
+end
+
+service 'hostapd' do
+  action [:enable, :start]
+end
+
+service 'dnsmasq' do
+  action [:enable, :start]
+end
+
+service 'tor' do
+  action [:enable, :start]
+end
