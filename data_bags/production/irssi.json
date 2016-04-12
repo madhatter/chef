@@ -1,0 +1,9 @@
+{
+  "id": "irssi",
+  "freenode": {
+    "encrypted_data": "5Z3RT7XVxP6NGkZjIS2WS+Hg0g1/ZstJgf99H7p5Cz4=\n",
+    "iv": "KN2Exat6OjH5/UgjkpEOUw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
