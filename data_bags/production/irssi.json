@@ -1,8 +1,14 @@
 {
   "id": "irssi",
   "freenode": {
-    "encrypted_data": "5Z3RT7XVxP6NGkZjIS2WS+Hg0g1/ZstJgf99H7p5Cz4=\n",
-    "iv": "KN2Exat6OjH5/UgjkpEOUw==\n",
+    "encrypted_data": "klHo5GSCLy0VvkRXzTGZjfR+jll12LLMKj2YbOO5wy0=\n",
+    "iv": "3c47U0IuNwRO5G+V/IXrsg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "oftc": {
+    "encrypted_data": "0WJWkOGN8TYQ08WK1mCb1PBeU9/FO6/B2ggP3LTxrx0=\n",
+    "iv": "Uv/+QwidHyEHwlkq7r3W2Q==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }
