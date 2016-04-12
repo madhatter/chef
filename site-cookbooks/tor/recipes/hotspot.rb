@@ -18,7 +18,7 @@ template '/etc/hostapd/hostapd.conf' do
   mode '0644'
   variables(:wifi_secret => wifi_secret['tor'])
   action :create
-end 
+end
 
 cookbook_file '/etc/systemd/system/openwifi.service' do
   source 'openwifi.service'
