@@ -2,7 +2,7 @@
 #
 # Initially create certificate with letsencrypt-auto certonly -d <domain> --debug
 
-directory "#{node[:letsencrypt][:dir]}" do
+directory "#{node['letsencrypt']['dir']}" do
   action :create
   mode 0755
   owner 'root'
@@ -11,7 +11,7 @@ end
 
 git 'letsencrypt' do
   repository 'https://github.com/letsencrypt/letsencrypt.git'
-  destination "#{node[:letsencrypt][:dir]}"
+  destination "#{node['letsencrypt']['dir']}"
   reference 'master'
   action :sync
   user 'root'

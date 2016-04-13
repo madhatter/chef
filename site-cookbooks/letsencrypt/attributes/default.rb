@@ -1,1 +1,1 @@
-node.default[:letsencrypt][:dir] = '/usr/local/src/letsencrypt'
+node.default['letsencrypt']['dir'] = '/usr/local/src/letsencrypt'
