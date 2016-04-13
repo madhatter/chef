@@ -38,11 +38,11 @@
         },
         "ctr": {
           "size": "16384",
-          "refcount": "2"
+          "refcount": "3"
         },
         "ccm": {
           "size": "20480",
-          "refcount": "2"
+          "refcount": "3"
         },
         "br_netfilter": {
           "size": "24576",
@@ -634,7 +634,7 @@
         },
         "aesni_intel": {
           "size": "167936",
-          "refcount": "6"
+          "refcount": "8"
         },
         "aes_x86_64": {
           "size": "20480",
@@ -859,16 +859,16 @@
           "lo": {
             "tx": {
               "queuelen": "1",
-              "bytes": "393852",
-              "packets": "3189",
+              "bytes": "399172",
+              "packets": "3217",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "393852",
-              "packets": "3189",
+              "bytes": "399172",
+              "packets": "3217",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -895,16 +895,16 @@
           "wlp3s0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "20077580",
-              "packets": "65795",
+              "bytes": "21097751",
+              "packets": "68370",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "104432357",
-              "packets": "110190",
+              "bytes": "105534862",
+              "packets": "112572",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1050,8 +1050,8 @@
       },
       "/dev/mapper/lvm-root": {
         "kb_size": "77278216",
-        "kb_used": "54175876",
-        "kb_available": "19153796",
+        "kb_used": "54175904",
+        "kb_available": "19153768",
         "percent_used": "74%",
         "mount": "/",
         "total_inodes": "4915200",
@@ -1108,13 +1108,13 @@
       },
       "/dev/mapper/lvm-home": {
         "kb_size": "160081564",
-        "kb_used": "148014464",
-        "kb_available": "3912376",
+        "kb_used": "148014228",
+        "kb_available": "3912612",
         "percent_used": "98%",
         "mount": "/home",
         "total_inodes": "10174464",
-        "inodes_used": "904384",
-        "inodes_available": "9270080",
+        "inodes_used": "904419",
+        "inodes_available": "9270045",
         "inodes_percent_used": "9%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1322,23 +1322,23 @@
         "free": "8388604kB"
       },
       "total": "7864644kB",
-      "free": "2041392kB",
-      "buffers": "317072kB",
-      "cached": "1573324kB",
-      "active": "4202580kB",
-      "inactive": "1159280kB",
-      "dirty": "680kB",
+      "free": "1986220kB",
+      "buffers": "323080kB",
+      "cached": "1583616kB",
+      "active": "4258464kB",
+      "inactive": "1157588kB",
+      "dirty": "472kB",
       "writeback": "0kB",
-      "anon_pages": "3471312kB",
-      "mapped": "543692kB",
-      "slab": "269168kB",
-      "slab_reclaimable": "218272kB",
-      "slab_unreclaim": "50896kB",
-      "page_tables": "79056kB",
+      "anon_pages": "3509228kB",
+      "mapped": "549752kB",
+      "slab": "269540kB",
+      "slab_reclaimable": "218512kB",
+      "slab_unreclaim": "51028kB",
+      "page_tables": "78752kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "12320924kB",
-      "committed_as": "12567996kB",
+      "committed_as": "12592640kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "0kB",
       "vmalloc_chunk": "0kB"
@@ -1560,7 +1560,7 @@
         "model": "69",
         "model_name": "Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz",
         "stepping": "1",
-        "mhz": "1899.902",
+        "mhz": "1900.000",
         "cache_size": "3072 KB",
         "physical_id": "0",
         "core_id": "1",
@@ -1665,7 +1665,7 @@
         "model": "69",
         "model_name": "Intel(R) Core(TM) i5-4300U CPU @ 1.90GHz",
         "stepping": "1",
-        "mhz": "1900.000",
+        "mhz": "1900.195",
         "cache_size": "3072 KB",
         "physical_id": "0",
         "core_id": "1",
@@ -1918,8 +1918,8 @@
         },
         "/dev/mapper/lvm-root": {
           "kb_size": "77278216",
-          "kb_used": "54175876",
-          "kb_available": "19153796",
+          "kb_used": "54175904",
+          "kb_available": "19153768",
           "percent_used": "74%",
           "total_inodes": "4915200",
           "inodes_used": "486223",
@@ -1986,12 +1986,12 @@
         },
         "/dev/mapper/lvm-home": {
           "kb_size": "160081564",
-          "kb_used": "148014464",
-          "kb_available": "3912376",
+          "kb_used": "148014228",
+          "kb_available": "3912612",
           "percent_used": "98%",
           "total_inodes": "10174464",
-          "inodes_used": "904384",
-          "inodes_available": "9270080",
+          "inodes_used": "904419",
+          "inodes_available": "9270045",
           "inodes_percent_used": "9%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2266,8 +2266,8 @@
         },
         "/": {
           "kb_size": "77278216",
-          "kb_used": "54175876",
-          "kb_available": "19153796",
+          "kb_used": "54175904",
+          "kb_available": "19153768",
           "percent_used": "74%",
           "total_inodes": "4915200",
           "inodes_used": "486223",
@@ -2286,8 +2286,8 @@
         },
         "/dev/shm": {
           "kb_size": "3932320",
-          "kb_used": "153144",
-          "kb_available": "3779176",
+          "kb_used": "152900",
+          "kb_available": "3779420",
           "percent_used": "4%",
           "total_inodes": "983080",
           "inodes_used": "152",
@@ -2382,12 +2382,12 @@
         },
         "/home": {
           "kb_size": "160081564",
-          "kb_used": "148014464",
-          "kb_available": "3912376",
+          "kb_used": "148014228",
+          "kb_available": "3912612",
           "percent_used": "98%",
           "total_inodes": "10174464",
-          "inodes_used": "904384",
-          "inodes_available": "9270080",
+          "inodes_used": "904419",
+          "inodes_available": "9270045",
           "inodes_percent_used": "9%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2741,8 +2741,8 @@
         "/dev/mapper/lvm-root,/": {
           "device": "/dev/mapper/lvm-root",
           "kb_size": "77278216",
-          "kb_used": "54175876",
-          "kb_available": "19153796",
+          "kb_used": "54175904",
+          "kb_available": "19153768",
           "percent_used": "74%",
           "mount": "/",
           "total_inodes": "4915200",
@@ -2760,8 +2760,8 @@
         "tmpfs,/dev/shm": {
           "device": "tmpfs",
           "kb_size": "3932320",
-          "kb_used": "153144",
-          "kb_available": "3779176",
+          "kb_used": "152900",
+          "kb_available": "3779420",
           "percent_used": "4%",
           "mount": "/dev/shm",
           "total_inodes": "983080",
@@ -2851,13 +2851,13 @@
         "/dev/mapper/lvm-home,/home": {
           "device": "/dev/mapper/lvm-home",
           "kb_size": "160081564",
-          "kb_used": "148014464",
-          "kb_available": "3912376",
+          "kb_used": "148014228",
+          "kb_available": "3912612",
           "percent_used": "98%",
           "mount": "/home",
           "total_inodes": "10174464",
-          "inodes_used": "904384",
-          "inodes_available": "9270080",
+          "inodes_used": "904419",
+          "inodes_available": "9270045",
           "inodes_percent_used": "9%",
           "fs_type": "ext4",
           "mount_options": [
@@ -3450,7 +3450,7 @@
     "command": {
       "ps": "ps -ef"
     },
-    "ohai_time": 1460522749.743242,
+    "ohai_time": 1460523577.9382136,
     "etc": {
       "passwd": {
         "root": {
@@ -4180,10 +4180,10 @@
     },
     "current_user": "root",
     "cloud_v2": null,
-    "uptime_seconds": 52709,
-    "uptime": "14 hours 38 minutes 29 seconds",
-    "idletime_seconds": 48948,
-    "idletime": "13 hours 35 minutes 48 seconds",
+    "uptime_seconds": 53537,
+    "uptime": "14 hours 52 minutes 17 seconds",
+    "idletime_seconds": 51874,
+    "idletime": "14 hours 24 minutes 34 seconds",
     "recipes": [
       "irssi",
       "irssi::default",
