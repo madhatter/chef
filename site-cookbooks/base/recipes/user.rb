@@ -5,7 +5,7 @@
 # Creates user with home
 #
 
-user "#{node['user']['name']}" do
+user node['user']['name'] do
   gid 'wheel'
   home "/home/#{node['user']['name']}"
   shell '/bin/zsh'
@@ -13,7 +13,7 @@ user "#{node['user']['name']}" do
 end
 
 directory "/home/#{node['user']['name']}" do
-  owner "#{node['user']['name']}"
+  owner node['user']['name']
   group 'users'
   mode '0700'
   action :create
