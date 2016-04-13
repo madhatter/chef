@@ -1,5 +1,5 @@
 servers = (
-<% if node[:irssi][:work] == false %>
+<% if node['irssi']['work'] == false %>
   { 
     address = "irc.undernet.org";
     chatnet = "Undernet";
@@ -61,7 +61,7 @@ servers = (
 );
 
 chatnets = {
-<% if node[:irssi][:work] == false %>
+<% if node['irssi']['work'] == false %>
   IRCnet = {
     type = "IRC";
     max_kicks = "4";
@@ -130,7 +130,7 @@ chatnets = {
 <% end %>
 };
 
-<% if node[:irssi][:work] == false %>
+<% if node['irssi']['work'] == false %>
 channels = (
   { name = "#heim2"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#irssi"; chatnet = "freenode"; autojoin = "yes"; },
@@ -309,7 +309,7 @@ notifies = {
   hrkfdn = { away_check = "yes"; ircnets = ( "freenode" ); };
   ette = { };
 };
-<% if node[:irssi][:work] == false %>
+<% if node['irssi']['work'] == false %>
 ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#ruby" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#awesome" ); },
@@ -372,7 +372,7 @@ ignores = (
 windows = {
   1 = { name = "(status)"; level = "ALL"; };
   2 = { name = "hilight"; sticky = "yes"; };
-<% if node[:irssi][:work] == false %>
+<% if node['irssi']['work'] == false %>
   3 = {
     items = (
       {
