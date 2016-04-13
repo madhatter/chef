@@ -2,11 +2,14 @@ package 'irssi' do
   action :install
 end
 
-cookbook_file "/home/#{node[:irssi][:user]}/.irssi/config" do
-  source 'config'
+passwords = data_bag_item('production', 'irssi', IO.read('/etc/chef/encrypted_data_bag_secret'))
+
+template "/home/#{node[:irssi][:user]}/.irssi/config" do
+  source 'config.erb'
   owner "#{node[:irssi][:user]}"
-  group "#{node[:irssi][:user]}"
+  group "users"
   mode '0644'
+  variables(:passwords => passwords)
   action :create
 end
 
@@ -15,9 +18,9 @@ end
     nickcolor.pl title.pl
   }.each do |file|
   cookbook_file "/home/#{node[:irssi][:user]}/.irssi/#{file}" do
-    source "plugins/#{file}"
+    source "scripts/#{file}"
     owner "#{node[:irssi][:user]}"
-    group "#{node[:irssi][:user]}"
+    group "users"
     mode '0644'
     action :create
   end
