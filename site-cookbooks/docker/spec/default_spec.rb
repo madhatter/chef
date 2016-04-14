@@ -1,11 +1,7 @@
 require 'chefspec'
 
 describe 'docker::default' do
-  let(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['user']['name'] = 'horst'
-    end.converge(described_recipe)
-  end
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
 
   it 'installs docker' do
     expect(chef_run).to install_package('docker')
