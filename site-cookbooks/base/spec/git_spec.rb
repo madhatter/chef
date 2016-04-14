@@ -7,6 +7,10 @@ describe 'base::git' do
     end.converge(described_recipe)
   end
 
+  it 'installs git' do
+    expect(chef_run).to install_package('git')
+  end
+
   it 'creates git config files for a user' do
     expect(chef_run).to create_template('/home/horst/.gitconfig')
     expect(chef_run).to create_template('/home/horst/.gitignore')
