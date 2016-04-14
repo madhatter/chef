@@ -2,7 +2,8 @@ package 'irssi' do
   action :install
 end
 
-passwords = data_bag_item('production', 'irssi', IO.read('/etc/chef/encrypted_data_bag_secret'))
+secret = Chef::EncryptedDataBagItem.load_secret(node['irssi']['data_bag_dir'])
+passwords = Chef::EncryptedDataBagItem.load('production', 'irssi', secret)
 
 template "/home/#{node['irssi']['user']}/.irssi/config" do
   source 'config.erb'
