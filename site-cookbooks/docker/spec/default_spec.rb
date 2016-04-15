@@ -1,7 +1,11 @@
 require 'chefspec'
 
 describe 'docker::default' do
-  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new do |node|
+      node.set['docker']['insecure_registries'] = ['first_insec_registry', 'second_insec_registry']
+    end.converge(described_recipe)
+  end
 
   it 'installs docker' do
     expect(chef_run).to install_package('docker')
@@ -20,6 +24,10 @@ describe 'docker::default' do
       user:  'root',
       group: 'root',
       mode:  '0644',
+    )
+    expect(chef_run).to render_file('/etc/conf.d/docker').with_content(
+      'DOCKER_OPTS="--insecure-registry first_insec_registry:5000 '\
+      '--insecure-registry second_insec_registry:5000 "'
     )
   end
 
