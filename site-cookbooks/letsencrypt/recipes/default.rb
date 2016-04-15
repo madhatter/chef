@@ -4,7 +4,7 @@
 
 directory node['letsencrypt']['dir'] do
   action :create
-  mode 0755
+  mode '0755'
   owner 'root'
   group 'root'
 end
