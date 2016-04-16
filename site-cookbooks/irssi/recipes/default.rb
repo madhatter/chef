@@ -18,7 +18,7 @@ end
     notonline.pl autorealname.pl country.pl friends.pl irssinotifier.pl
     nickcolor.pl title.pl
   }.each do |file|
-  cookbook_file "/home/#{node['irssi']['user']}/.irssi/#{file}" do
+  cookbook_file "/home/#{node['irssi']['user']}/.irssi/scripts/#{file}" do
     source "scripts/#{file}"
     owner node['irssi']['user']
     group "users"

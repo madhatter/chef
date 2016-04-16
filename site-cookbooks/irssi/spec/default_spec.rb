@@ -30,4 +30,17 @@ describe 'irssi::default' do
     expect(chef_run).to render_file('/home/horst/.irssi/config').with_content(/gammel/)
     expect(chef_run).to render_file('/home/horst/.irssi/config').with_content(/bammel/)
   end
+
+  it 'creates lots of useful plugins' do
+    %w{ adv_windowlist.pl chanshare.pl dccstat.pl hilightwin.pl keepnick.pl
+        notonline.pl autorealname.pl country.pl friends.pl irssinotifier.pl
+        nickcolor.pl title.pl
+      }.each do |file|
+      expect(chef_run).to create_cookbook_file("/home/horst/.irssi/scripts/#{file}").with(
+        owner: 'horst',
+        group: 'users',
+        mode: '0644',
+      )
+    end
+  end
 end
