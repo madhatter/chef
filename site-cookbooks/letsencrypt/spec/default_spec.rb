@@ -27,4 +27,12 @@ describe 'letsencrypt::default' do
   it 'checks out the letsencrypt repository' do
     expect(chef_run).to sync_git('letsencrypt').with(repository: 'https://github.com/somerepo')
   end
+
+  it 'creates a cron job for certificate renewal' do
+    expect(chef_run).to create_cron('Renew letsencrypt certificate').with(
+      minute: '0',
+      hour: '1',
+      user: 'root',
+    )
+  end
 end
