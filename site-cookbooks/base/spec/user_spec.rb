@@ -1,4 +1,4 @@
-require 'chefspec'
+require_relative '../../spec_helper.rb'
 
 describe 'base::user' do
   let(:chef_run) do
