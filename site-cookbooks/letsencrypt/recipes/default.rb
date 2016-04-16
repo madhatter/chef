@@ -10,7 +10,7 @@ directory node['letsencrypt']['dir'] do
 end
 
 git 'letsencrypt' do
-  repository 'https://github.com/letsencrypt/letsencrypt.git'
+  repository node['letsencrypt']['repository']
   destination node['letsencrypt']['dir']
   reference 'master'
   action :sync

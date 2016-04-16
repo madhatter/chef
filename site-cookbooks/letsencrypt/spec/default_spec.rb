@@ -4,6 +4,7 @@ describe 'letsencrypt::default' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new do |node|
       node.set['letsencrypt']['dir'] = '/usr/local/src/something'
+      node.set['letsencrypt']['repository'] = 'https://github.com/somerepo'
     end.converge(described_recipe)
   end
 
@@ -21,5 +22,9 @@ describe 'letsencrypt::default' do
       group: 'root',
       mode:  '0755',
     )
+  end
+
+  it 'checks out the letsencrypt repository' do
+    expect(chef_run).to sync_git('letsencrypt').with(repository: 'https://github.com/somerepo')
   end
 end
