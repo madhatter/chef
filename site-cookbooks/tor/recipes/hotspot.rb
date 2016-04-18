@@ -2,7 +2,7 @@ secret = Chef::EncryptedDataBagItem.load_secret(node['tor']['data_bag_dir'])
 wifi_secret = Chef::EncryptedDataBagItem.load('production', 'passwords', secret)
 #wifi_secret = data_bag_item('production', 'passwords', IO.read('/etc/chef/encrypted_data_bag_secret'))
 
-%w{ dnsmasq hostapd iptables}.each do |software|
+%w{ dnsmasq hostapd iptables tor}.each do |software|
   package software do
     action :install
   end
