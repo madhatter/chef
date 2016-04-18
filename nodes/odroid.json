@@ -2260,6 +2260,6 @@
   "run_list": [
     "recipe[base]",
     "recipe[docker::registry]",
-    "recipe[tor::hotspot]"
+    "recipe[tor::default]"
   ]
 }
