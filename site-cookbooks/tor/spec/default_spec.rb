@@ -2,9 +2,7 @@ require_relative '../../spec_helper.rb'
 
 describe 'tor::default' do
   let(:chef_run) do
-    cookbook_paths = %W(#{File.expand_path('../../..', Dir.pwd)}/site-cookbooks #{File.expand_path('../../..', Dir.pwd)}/cookbooks)
-    ChefSpec::SoloRunner.new({cookbook_path: cookbook_paths}) do |node|
-    #ChefSpec::SoloRunner.new() do |node|
+    ChefSpec::SoloRunner.new do |node|
       node.set['tor']['data_bag_dir'] = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     end.converge(described_recipe)
   end

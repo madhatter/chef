@@ -3,6 +3,37 @@ SITE
   specs:
     iptables-ng (2.2.8)
 
+PATH
+  remote: site-cookbooks/base
+  specs:
+    base (0.0.1)
+
+PATH
+  remote: site-cookbooks/docker
+  specs:
+    docker (0.0.1)
+
+PATH
+  remote: site-cookbooks/irssi
+  specs:
+    irssi (0.0.1)
+
+PATH
+  remote: site-cookbooks/letsencrypt
+  specs:
+    letsencrypt (0.0.1)
+
+PATH
+  remote: site-cookbooks/tor
+  specs:
+    tor (0.0.1)
+      iptables-ng (>= 0.0.0)
+
 DEPENDENCIES
+  base (>= 0)
+  docker (>= 0)
   iptables-ng (~> 2.2.8)
+  irssi (>= 0)
+  letsencrypt (>= 0)
+  tor (>= 0)
 

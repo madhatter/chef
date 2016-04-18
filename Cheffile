@@ -14,4 +14,19 @@ site 'https://supermarket.getchef.com/api/v1'
 #   :git => 'https://github.com/findsyou/cookbooks',
 #   :ref => 'postgresql-improvements'
 
+cookbook 'base',
+  :path => 'site-cookbooks/base'
+
+cookbook 'docker',
+  :path => 'site-cookbooks/docker'
+
+cookbook 'irssi',
+  :path => 'site-cookbooks/irssi'
+
+cookbook 'letsencrypt',
+  :path => 'site-cookbooks/letsencrypt'
+
+cookbook 'tor',
+  :path => 'site-cookbooks/tor'
+
 cookbook 'iptables-ng', '~> 2.2.8'
