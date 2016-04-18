@@ -1,3 +1,5 @@
+include_recipe 'iptables-ng'
+
 secret = Chef::EncryptedDataBagItem.load_secret(node['tor']['data_bag_dir'])
 wifi_secret = Chef::EncryptedDataBagItem.load('production', 'passwords', secret)
 #wifi_secret = data_bag_item('production', 'passwords', IO.read('/etc/chef/encrypted_data_bag_secret'))
