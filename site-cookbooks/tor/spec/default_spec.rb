@@ -15,10 +15,11 @@ describe 'tor::default' do
     secret_file = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     secret = Chef::EncryptedDataBagItem.load_secret(secret_file)
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('production', 'passwords', secret).and_return(databag_stub)
-    #allow(Kernel).to receive(:require).with('iptables-ng').and_return(true)
   end
 
-  it 'installs dnsmasq' do
-    expect(chef_run).to install_package('dnsmasq')
+  %w(dnsmasq hostapd iptables tor).each do |package|
+    it "installs #{package}" do
+      expect(chef_run).to install_package(package)
+    end
   end
 end
