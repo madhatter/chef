@@ -61,4 +61,22 @@ describe 'tor::default' do
     resource = chef_run.cookbook_file('/etc/sysctl.d/99-sysctl.conf')
     expect(resource).to notify('execute[sysctl reload]').to(:run).immediately
   end
+
+  it 'create iptables rules' do
+    expect(chef_run).to create_iptables_ng_rule('wlan_accept').with(
+      :chain => 'FORWARD',
+      :table => 'filter',
+      :rule =>'-i wlan0 -j ACCEPT'
+    )
+    expect(chef_run).to create_iptables_ng_rule('port53').with(
+      :chain => 'PREROUTING',
+      :table => 'nat',
+      :rule => '-i wlan0 -p udp -m udp --dport 53 -j REDIRECT --to-ports 53'
+    )
+    expect(chef_run).to create_iptables_ng_rule('port9040').with(
+      :chain => 'PREROUTING',
+      :table => 'nat',
+      :rule => '-i wlan0 -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REDIRECT --to-ports 9040'
+    )
+  end
 end
