@@ -29,4 +29,7 @@ cookbook 'letsencrypt',
 cookbook 'tor',
   :path => 'site-cookbooks/tor'
 
+cookbook 'nostalgix_nginx',
+  :path => 'site-cookbooks/nostalgix_nginx'
+
 cookbook 'iptables-ng', '~> 2.2.8'

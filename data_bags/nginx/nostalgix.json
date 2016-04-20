@@ -1,0 +1,1 @@
+{"name":"data_bag_item_nginx_nostalgix","json_class":"Chef::DataBagItem","chef_type":"data_bag_item","data_bag":"nginx","raw_data":{"id":"nostalgix","server_name":"nostalgix.org"}}

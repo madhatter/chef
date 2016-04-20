@@ -1,0 +1,34 @@
+server {
+  listen       80;
+  server_name  www.nostalgix.org;
+  return       301 http://nostalgix.org$request_uri;
+}
+
+server {
+	listen   80; ## listen for ipv4
+	#listen   [::]:80 default ipv6only=on; ## listen for ipv6
+  server_name  <%= @server_name %>;
+	return 301 https://nostalgix.org$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  #listen [::]:443 ipv6only=on;
+
+
+	ssl_certificate /etc/letsencrypt/live/www.nostalgix.org/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/www.nostalgix.org/privkey.pem;
+
+	#ssl_dhparam /etc/letsencrypt/live/www.nostalgix.org/fullchain.pem
+
+	access_log  /var/log/nginx/nostalgix.access.log;
+
+  server_name <%= @server_name %>;
+	root   /var/customers/webs/arvid/www;
+
+	location / {
+		index  index.html index.htm;
+	}
+
+	#error_page  404  /404.html;
+}

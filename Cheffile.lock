@@ -24,6 +24,11 @@ PATH
     letsencrypt (0.0.1)
 
 PATH
+  remote: site-cookbooks/nostalgix_nginx
+  specs:
+    nostalgix_nginx (0.0.1)
+
+PATH
   remote: site-cookbooks/tor
   specs:
     tor (0.0.1)
@@ -35,5 +40,6 @@ DEPENDENCIES
   iptables-ng (~> 2.2.8)
   irssi (>= 0)
   letsencrypt (>= 0)
+  nostalgix_nginx (>= 0)
   tor (>= 0)
 
