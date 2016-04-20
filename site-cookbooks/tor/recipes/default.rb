@@ -10,11 +10,6 @@ wifi_secret = Chef::EncryptedDataBagItem.load('production', 'passwords', secret)
   end
 end
 
-log 'message' do
-  message "Secret: #{wifi_secret['tor']}"
-  level :info
-end
-
 template '/etc/hostapd/hostapd.conf' do
   source 'hostapd.conf.erb'
   owner 'root'
