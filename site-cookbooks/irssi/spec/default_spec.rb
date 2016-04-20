@@ -14,10 +14,8 @@ describe 'irssi::default' do
   }
 
   before do
-    #stub_data_bag_item('production', 'irssi', 'secret').and_return(databag_stub)
     secret_file = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     secret = Chef::EncryptedDataBagItem.load_secret(secret_file)
-    #Chef::EncryptedDataBagItem.stub(:load).with('production', 'irssi', secret).and_return(databag_stub)
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('production', 'irssi', secret).and_return(databag_stub)
   end
 
