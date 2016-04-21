@@ -56,6 +56,11 @@ describe 'tor::default' do
     expect(resource).to notify('execute[sysctl reload]').to(:run).immediately
   end
 
+  it 'executes sysctl' do
+    my_execute = chef_run.execute('sysctl reload')
+    expect(my_execute).to do_nothing
+  end
+
   it 'create iptables rules' do
     expect(chef_run).to create_iptables_ng_rule('wlan_accept').with(
       :chain => 'FORWARD',
@@ -72,5 +77,22 @@ describe 'tor::default' do
       :table => 'nat',
       :rule => '-i wlan0 -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j REDIRECT --to-ports 9040'
     )
+    expect(chef_run).to create_iptables_ng_rule('masquerade').with(
+      :chain => 'POSTROUTING',
+      :table => 'nat',
+      :rule => '-o eth0 -j MASQUERADE'
+    )
+  end
+
+  it 'enables all necessary services' do
+    %w{ iptables openwifi hostapd dnsmasq tor }.each do |service|
+      expect(chef_run).to enable_service(service)
+    end
+  end
+
+  it 'starts all necessary services' do
+    %w{ iptables openwifi hostapd dnsmasq tor }.each do |service|
+      expect(chef_run).to start_service(service)
+    end
   end
 end
