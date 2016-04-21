@@ -1,34 +1,27 @@
 server {
-  listen       80;
-  server_name  www.nostalgix.org;
-  return       301 http://nostalgix.org$request_uri;
+  listen       <%= @data_bag['http_port'] %>;
+  server_name  www.<%= @data_bag['server_name'] %>;
+  return       301 http://<%= @data_bag['server_name'] %>$request_uri;
 }
 
 server {
-	listen   80; ## listen for ipv4
-	#listen   [::]:80 default ipv6only=on; ## listen for ipv6
-  server_name  <%= @server_name %>;
-	return 301 https://nostalgix.org$request_uri;
+  listen   <%= @data_bag['http_port'] %>; ## listen for ipv4
+  server_name  <%= @data_bag['server_name'] %>;
+  return 301 https://<%= @data_bag['server_name'] %>$request_uri;
 }
 
 server {
-  listen 443 ssl;
-  #listen [::]:443 ipv6only=on;
+  listen <%= @data_bag['https_port'] %> ssl;
 
+  ssl_certificate <%= @data_bag['ssl_certificate'] %>;
+  ssl_certificate_key <%= @data_bag['ssl_certificate_key'] %>;
 
-	ssl_certificate /etc/letsencrypt/live/www.nostalgix.org/fullchain.pem;
-	ssl_certificate_key /etc/letsencrypt/live/www.nostalgix.org/privkey.pem;
+  access_log  <%= @data_bag['access_log'] %>;
 
-	#ssl_dhparam /etc/letsencrypt/live/www.nostalgix.org/fullchain.pem
-
-	access_log  /var/log/nginx/nostalgix.access.log;
-
-  server_name <%= @server_name %>;
-	root   /var/customers/webs/arvid/www;
+  server_name <%= @data_bag['server_name'] %>;
+  root   <%= @data_bag['root_dir'] %>;
 
 	location / {
 		index  index.html index.htm;
 	}
-
-	#error_page  404  /404.html;
 }
