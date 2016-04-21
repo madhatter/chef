@@ -5,7 +5,7 @@ package 'nginx' do
 end
 
 template '/etc/nginx/sites-available/nostalgix' do
-  source 'nostalgix.erb'
+  source 'site.erb'
   owner 'root'
   group 'root'
   mode '0644'
