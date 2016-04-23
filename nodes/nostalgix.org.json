@@ -1,8 +1,17 @@
 {
-  "run_list": [
-	"recipe[letsencrypt]"
-  ],
+  "name": "nostalgix.org",
+  "normal": {
+    "nginx": {
+      "sites": [
+        "nostalgix.org"
+      ]
+    }
+  },
   "automatic": {
     "ipaddress": "nostalgix.org"
-  }
+  },
+  "run_list": [
+    "recipe[letsencrypt]",
+    "recipe[nostalgix_nginx]"
+  ]
 }
