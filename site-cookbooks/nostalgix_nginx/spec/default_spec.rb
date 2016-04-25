@@ -2,6 +2,7 @@ require_relative '../../spec_helper.rb'
 
 describe 'nostalgix_nginx::default' do
   before do
+    # TODO: Add more sites here
     stub_data_bag_item('nginx', 'nostalgix.org').and_return({
       'server_name' => 'gammel.org',
       'http_port' => '80',
