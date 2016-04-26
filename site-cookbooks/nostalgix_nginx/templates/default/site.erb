@@ -29,7 +29,15 @@ server {
   server_name <%= @data_bag['server_name'] %>;
   root   <%= @data_bag['root_dir'] %>;
 
-	location / {
-		index  index.html index.htm;
-	}
+  <% if @data_bag['location'] %>
+  <% @data_bag['location'].each do |location,value| %>
+  location <%= location %>{
+    <%= value %>;
+  }
+  <% end %>
+  <% else %>
+  location / {
+  index  index.html index.htm;
+  }
+  <% end %>
 }

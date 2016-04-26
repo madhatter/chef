@@ -9,13 +9,15 @@ describe 'nostalgix_nginx::default' do
       'ssl_certificate' => '/some_dir/gammelcert',
       'ssl_certificate_key' => '/some_dir/gammelkey',
       'access_log' => '/logdir/logfile',
-      'root_dir' => '/wwwhome'
+      'root_dir' => '/wwwhome',
+      'location' => { '/' => 'index  index.html index.htm index.php' }
     })
     stub_data_bag_item('nginx', 'share.nostalgix.org').and_return({
       'server_name' => 'share.gammel.org',
       'http_port' => '80',
       'access_log' => '/logdir/share_logfile',
-      'root_dir' => '/wwwhome_share'
+      'root_dir' => '/wwwhome_share',
+      'location' => { '/' => 'autoindex on' }
     })
   end
 
@@ -48,6 +50,8 @@ describe 'nostalgix_nginx::default' do
       .with_content(/\/logdir\/logfile/)
     expect(chef_run).to render_file('/etc/nginx/sites-available/nostalgix.org')
       .with_content(/\/wwwhome/)
+    expect(chef_run).to render_file('/etc/nginx/sites-available/nostalgix.org')
+      .with_content(/index\s\sindex.html\sindex.htm\sindex.php/)
   end
 
   it 'creates nginx config from data_bag with less options' do
@@ -64,5 +68,7 @@ describe 'nostalgix_nginx::default' do
       .with_content(/\/logdir\/share_logfile/)
     expect(chef_run).to render_file('/etc/nginx/sites-available/share.nostalgix.org')
       .with_content(/\/wwwhome_share/)
+    expect(chef_run).to render_file('/etc/nginx/sites-available/share.nostalgix.org')
+      .with_content(/autoindex\son/)
   end
 end
