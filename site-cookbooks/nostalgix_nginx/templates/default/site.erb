@@ -1,20 +1,28 @@
+<% if @data_bag['server_name'] =~ /^\w+\.\w+$/ %>
 server {
   listen       <%= @data_bag['http_port'] %>;
   server_name  www.<%= @data_bag['server_name'] %>;
   return       301 http://<%= @data_bag['server_name'] %>$request_uri;
 }
+<% end %>
 
+<% if @data_bag['ssl_certificate'] %>
 server {
   listen   <%= @data_bag['http_port'] %>; ## listen for ipv4
   server_name  <%= @data_bag['server_name'] %>;
   return 301 https://<%= @data_bag['server_name'] %>$request_uri;
 }
+<% end %>
 
 server {
+  <% if @data_bag['ssl_certificate'] %>
   listen <%= @data_bag['https_port'] %> ssl;
 
   ssl_certificate <%= @data_bag['ssl_certificate'] %>;
   ssl_certificate_key <%= @data_bag['ssl_certificate_key'] %>;
+  <% else %>
+  listen       <%= @data_bag['http_port'] %>;
+  <% end %>
 
   access_log  <%= @data_bag['access_log'] %>;
 
