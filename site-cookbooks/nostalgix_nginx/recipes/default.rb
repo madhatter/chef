@@ -13,4 +13,10 @@ node['nginx']['sites'].each do |site|
     variables(:data_bag => data_bag)
     action :create
   end
+
+  link "/etc/nginx/sites-enabled/#{site}" do
+    to "/etc/nginx/sites-available/#{site}"
+    link_type :symbolic
+  end
 end
+

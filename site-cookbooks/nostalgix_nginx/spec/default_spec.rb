@@ -51,7 +51,7 @@ describe 'nostalgix_nginx::default' do
     expect(chef_run).to render_file('/etc/nginx/sites-available/nostalgix.org')
       .with_content(/\/wwwhome/)
     expect(chef_run).to render_file('/etc/nginx/sites-available/nostalgix.org')
-      .with_content(/index\s\sindex.html\sindex.htm\sindex.php/)
+    .with_content(/index\s\sindex.html\sindex.htm\sindex.php/)
   end
 
   it 'creates nginx config from data_bag with less options' do
@@ -70,5 +70,12 @@ describe 'nostalgix_nginx::default' do
       .with_content(/\/wwwhome_share/)
     expect(chef_run).to render_file('/etc/nginx/sites-available/share.nostalgix.org')
       .with_content(/autoindex\son/)
+  end
+
+  it 'creates links to enable sites' do
+    expect(chef_run).to create_link('/etc/nginx/sites-enabled/nostalgix.org')
+      .with(link_type: :symbolic)
+    expect(chef_run).to create_link('/etc/nginx/sites-enabled/share.nostalgix.org')
+      .with(link_type: :symbolic)
   end
 end
