@@ -2,6 +2,10 @@ package 'nginx' do
   action :install
 end
 
+link '/etc/nginx/sites-enabled/default' do
+  action :delete
+end
+
 node['nginx']['sites'].each do |site| 
   data_bag = data_bag_item('nginx', site)
   

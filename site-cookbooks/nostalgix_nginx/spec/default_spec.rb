@@ -72,6 +72,10 @@ describe 'nostalgix_nginx::default' do
       .with_content(/autoindex\son/)
   end
 
+  it 'disables the default site configuration' do
+    expect(chef_run).to delete_link('/etc/nginx/sites-enabled/default')
+  end
+
   it 'creates links to enable sites' do
     expect(chef_run).to create_link('/etc/nginx/sites-enabled/nostalgix.org')
       .with(link_type: :symbolic)
