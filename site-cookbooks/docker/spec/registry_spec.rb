@@ -2,8 +2,8 @@ require_relative '../../spec_helper.rb'
 
 describe 'docker::registry' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['docker']['registry_image'] = 'the_image'
+    ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['docker']['registry_image'] = 'the_image'
     end.converge(described_recipe)
   end
 

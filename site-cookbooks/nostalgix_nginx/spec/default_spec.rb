@@ -22,9 +22,9 @@ describe 'nostalgix_nginx::default' do
   end
 
   let(:chef_run) do
-     ChefSpec::SoloRunner.new do |node|
-       node.set['nginx']['config_dir'] = '/etc/nginx'
-       node.set['nginx']['sites'] = ['nostalgix.org','share.nostalgix.org']
+     ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+       node.normal['nginx']['config_dir'] = '/etc/nginx'
+       node.normal['nginx']['sites'] = ['nostalgix.org','share.nostalgix.org']
     end.converge(described_recipe)
   end
 

@@ -2,9 +2,9 @@ require_relative '../../spec_helper.rb'
 
 describe 'letsencrypt::default' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['letsencrypt']['dir'] = '/usr/local/src/something'
-      node.set['letsencrypt']['repository'] = 'https://github.com/somerepo'
+    ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['letsencrypt']['dir'] = '/usr/local/src/something'
+      node.normal['letsencrypt']['repository'] = 'https://github.com/somerepo'
     end.converge(described_recipe)
   end
 

@@ -5,8 +5,8 @@ describe 'tor::default' do
     # Redirecting stdout to suppress iptables_ng_chain noise.
     old_std_out = $stdout.clone
     $stdout.reopen('tmp_std_out.txt', 'w')
-    result = ChefSpec::SoloRunner.new do |node|
-      node.set['tor']['data_bag_dir'] = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
+    result = ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['tor']['data_bag_dir'] = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     end.converge(described_recipe)
     $stdout.reopen(old_std_out)
     File.read('tmp_std_out.txt').each_line do |lin|
