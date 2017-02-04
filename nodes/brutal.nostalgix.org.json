@@ -6,6 +6,7 @@
         "nostalgix.org"
       ]
     },
+    "data_bag_secret": "/etc/chef/encrypted_data_bag_secret",
     "tags": [
 
     ]
@@ -13,8 +14,7 @@
   "default": {
     "irssi": {
       "user": "madhatter",
-      "work": false,
-      "data_bag_dir": "/etc/chef/encrypted_data_bag_secret"
+      "work": false
     }
   },
   "automatic": {
@@ -303,10 +303,10 @@
     "platform": "arch",
     "platform_version": "4.9.6-1-ARCH",
     "platform_family": "arch",
-    "uptime_seconds": 111756,
-    "uptime": "1 day 07 hours 02 minutes 36 seconds",
-    "idletime_seconds": 444693,
-    "idletime": "5 days 03 hours 31 minutes 33 seconds",
+    "uptime_seconds": 119522,
+    "uptime": "1 day 09 hours 12 minutes 02 seconds",
+    "idletime_seconds": 475608,
+    "idletime": "5 days 12 hours 06 minutes 48 seconds",
     "languages": {
       "python": {
         "version": "3.6.0",
@@ -360,23 +360,23 @@
         "surplus": "0"
       },
       "total": "4051236kB",
-      "free": "2609732kB",
-      "buffers": "99796kB",
-      "cached": "1062712kB",
-      "active": "621456kB",
-      "inactive": "651220kB",
-      "dirty": "496kB",
+      "free": "2589080kB",
+      "buffers": "108284kB",
+      "cached": "1070564kB",
+      "active": "634512kB",
+      "inactive": "657696kB",
+      "dirty": "364kB",
       "writeback": "0kB",
-      "anon_pages": "110196kB",
-      "mapped": "53800kB",
-      "slab": "140736kB",
-      "slab_reclaimable": "121392kB",
-      "slab_unreclaim": "19344kB",
-      "page_tables": "3312kB",
+      "anon_pages": "113488kB",
+      "mapped": "57016kB",
+      "slab": "141808kB",
+      "slab_reclaimable": "122160kB",
+      "slab_unreclaim": "19648kB",
+      "page_tables": "3324kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "3074188kB",
-      "committed_as": "271752kB",
+      "committed_as": "270984kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "0kB",
       "vmalloc_chunk": "0kB",
@@ -520,16 +520,16 @@
           "ens3": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "20872151",
-              "packets": "130508",
+              "bytes": "24089265",
+              "packets": "147238",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "221636418",
-              "packets": "2008382",
+              "bytes": "231657504",
+              "packets": "2148192",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -776,13 +776,13 @@
       },
       "/dev/sda2": {
         "kb_size": "81403376",
-        "kb_used": "2516848",
-        "kb_available": "74728460",
+        "kb_used": "2529320",
+        "kb_available": "74715988",
         "percent_used": "4%",
         "mount": "/",
         "total_inodes": "5177344",
-        "inodes_used": "78816",
-        "inodes_available": "5098528",
+        "inodes_used": "79170",
+        "inodes_available": "5098174",
         "inodes_percent_used": "2%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1041,12 +1041,12 @@
         },
         "/dev/sda2": {
           "kb_size": "81403376",
-          "kb_used": "2516856",
-          "kb_available": "74728452",
+          "kb_used": "2529328",
+          "kb_available": "74715980",
           "percent_used": "4%",
           "total_inodes": "5177344",
-          "inodes_used": "78818",
-          "inodes_available": "5098526",
+          "inodes_used": "79172",
+          "inodes_available": "5098172",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1294,12 +1294,12 @@
         },
         "/": {
           "kb_size": "81403376",
-          "kb_used": "2516856",
-          "kb_available": "74728452",
+          "kb_used": "2529328",
+          "kb_available": "74715980",
           "percent_used": "4%",
           "total_inodes": "5177344",
-          "inodes_used": "78818",
-          "inodes_available": "5098526",
+          "inodes_used": "79172",
+          "inodes_available": "5098172",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -1708,13 +1708,13 @@
         "/dev/sda2,/": {
           "device": "/dev/sda2",
           "kb_size": "81403376",
-          "kb_used": "2516856",
-          "kb_available": "74728452",
+          "kb_used": "2529328",
+          "kb_available": "74715980",
           "percent_used": "4%",
           "mount": "/",
           "total_inodes": "5177344",
-          "inodes_used": "78818",
-          "inodes_available": "5098526",
+          "inodes_used": "79172",
+          "inodes_available": "5098172",
           "inodes_percent_used": "2%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2541,7 +2541,7 @@
     },
     "current_user": "root",
     "root_group": "root",
-    "ohai_time": 1486239284.8393734,
+    "ohai_time": 1486247051.1538088,
     "shells": [
       "/bin/sh",
       "/bin/bash",
@@ -2616,7 +2616,7 @@
       "ULONG_MAX": 18446744073709551615,
       "USHRT_MAX": 65535,
       "WORD_BIT": 32,
-      "_AVPHYS_PAGES": 651403,
+      "_AVPHYS_PAGES": 646266,
       "_NPROCESSORS_CONF": 4,
       "_NPROCESSORS_ONLN": 4,
       "_PHYS_PAGES": 1012809,
