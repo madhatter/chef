@@ -1,0 +1,23 @@
+{
+  "name": "nostalgix.org",
+  "normal": {
+    "nginx": {
+      "sites": [
+        "nostalgix.org"
+      ]
+    }
+  },
+  "default": {
+    "git": {
+      "user": "madhatter",
+      "email": "madhatter@nostalgix.org"
+    },
+  },
+  "automatic": {
+    "ipaddress": "brutal.nostalgix.org"
+  },
+  "run_list": [
+    "recipe[letsencrypt]",
+    "recipe[nostalgix_nginx]"
+  ]
+}
