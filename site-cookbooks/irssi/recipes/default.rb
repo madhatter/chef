@@ -1,8 +1,15 @@
+unless node['data_bag_secret']
+  Chef::Log.fatal('The node["data_bag_secret"] attribute is not set on this node,')
+  Chef::Log.fatal('but it is necessary to generate valid configuration files.')
+  Chef::Log.fatal('I am bailing here so this node does not upgrade.')
+  raise
+end
+
 package 'irssi' do
   action :install
 end
 
-secret = Chef::EncryptedDataBagItem.load_secret(node['irssi']['data_bag_dir'])
+secret = Chef::EncryptedDataBagItem.load_secret(node['data_bag_secret'])
 passwords = Chef::EncryptedDataBagItem.load('production', 'irssi', secret)
 
 directory "/home/#{node['irssi']['user']}/.irssi/scripts" do
