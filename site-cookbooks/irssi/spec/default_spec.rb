@@ -24,6 +24,10 @@ describe 'irssi::default' do
     expect(chef_run).to install_package('irssi')
   end
 
+  it 'creates a directory' do
+    expect(chef_run).to create_directory('/home/horst/.irssi/scripts')
+  end
+
   it 'creates irssi config files with credentials' do
     expect(chef_run).to create_template('/home/horst/.irssi/config')
     expect(chef_run).to render_file('/home/horst/.irssi/config').with_content(/gammel/)
