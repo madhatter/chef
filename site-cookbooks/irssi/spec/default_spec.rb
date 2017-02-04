@@ -24,7 +24,8 @@ describe 'irssi::default' do
     expect(chef_run).to install_package('irssi')
   end
 
-  it 'creates a directory' do
+  it 'creates directories' do
+    expect(chef_run).to create_directory('/home/horst/.irssi').with_owner('horst')
     expect(chef_run).to create_directory('/home/horst/.irssi/scripts').with_owner('horst')
   end
 
