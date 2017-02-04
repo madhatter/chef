@@ -5,6 +5,13 @@ end
 secret = Chef::EncryptedDataBagItem.load_secret(node['irssi']['data_bag_dir'])
 passwords = Chef::EncryptedDataBagItem.load('production', 'irssi', secret)
 
+directory "/home/#{node['irssi']['user']}/.irssi" do
+  owner "#{node['irssi']['user']}"
+  group "#{node['irssi']['user']}"
+  mode '0755'
+  action :create
+end
+
 template "/home/#{node['irssi']['user']}/.irssi/config" do
   source 'config.erb'
   owner node['irssi']['user']
