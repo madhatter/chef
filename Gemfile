@@ -6,6 +6,6 @@ gem 'knife-solo_data_bag', '~> 1.1.0'
 gem 'librarian-chef', '~> 0.0.4'
 
 group :test do
-  gem 'chefspec', '~> 4.6.1'
+  gem 'chefspec', '~> 5.3.0'
   gem 'rake', '~> 11.1.2'
 end
