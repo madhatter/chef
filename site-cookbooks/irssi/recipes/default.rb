@@ -5,10 +5,11 @@ end
 secret = Chef::EncryptedDataBagItem.load_secret(node['irssi']['data_bag_dir'])
 passwords = Chef::EncryptedDataBagItem.load('production', 'irssi', secret)
 
-directory "/home/#{node['irssi']['user']}/.irssi" do
+directory "/home/#{node['irssi']['user']}/.irssi/scripts" do
   owner "#{node['irssi']['user']}"
-  group "#{node['irssi']['user']}"
+  group "users"
   mode '0755'
+  recursive true
   action :create
 end
 
