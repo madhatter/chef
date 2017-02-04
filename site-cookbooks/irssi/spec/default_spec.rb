@@ -25,12 +25,21 @@ describe 'irssi::default' do
   end
 
   it 'creates directories' do
-    expect(chef_run).to create_directory('/home/horst/.irssi').with_owner('horst')
-    expect(chef_run).to create_directory('/home/horst/.irssi/scripts').with_owner('horst')
+    expect(chef_run).to create_directory('/home/horst/.irssi').with(
+      owner: 'horst',
+      group: 'horst',
+    )
+    expect(chef_run).to create_directory('/home/horst/.irssi/scripts').with(
+      owner: 'horst',
+      group: 'horst',
+    )
   end
 
   it 'creates irssi config files with credentials' do
-    expect(chef_run).to create_template('/home/horst/.irssi/config')
+    expect(chef_run).to create_template('/home/horst/.irssi/config').with(
+      owner: 'horst',
+      group: 'horst',
+    )
     expect(chef_run).to render_file('/home/horst/.irssi/config').with_content(/gammel/)
     expect(chef_run).to render_file('/home/horst/.irssi/config').with_content(/bammel/)
   end
@@ -42,7 +51,7 @@ describe 'irssi::default' do
       }.each do |file|
       expect(chef_run).to create_cookbook_file("/home/horst/.irssi/scripts/#{file}").with(
         owner: 'horst',
-        group: 'users',
+        group: 'horst',
         mode: '0644',
       )
     end
