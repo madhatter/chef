@@ -2,9 +2,9 @@ require_relative '../../spec_helper.rb'
 
 describe 'irssi::default' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['irssi']['user'] = 'horst'
-      node.set['irssi']['data_bag_dir'] = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
+    ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['irssi']['user'] = 'horst'
+      node.normal['irssi']['data_bag_dir'] = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     end.converge(described_recipe)
   end
 
@@ -17,6 +17,7 @@ describe 'irssi::default' do
     secret_file = File.expand_path('./encrypted_data_bag_secret', File.dirname(__FILE__))
     secret = Chef::EncryptedDataBagItem.load_secret(secret_file)
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('production', 'irssi', secret).and_return(databag_stub)
+    allow_any_instance_of(Chef::Recipe).to receive(:search).with(:node, "my_recipe:*").and_return([{"hostname" => "node1.example.com" }, {"hostname" => "node2.example.com"}])
   end
 
   it 'installs irssi' do

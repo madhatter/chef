@@ -2,8 +2,8 @@ require_relative '../../spec_helper.rb'
 
 describe 'base::git' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['user']['name'] = 'horst'
+    ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['user']['name'] = 'horst'
     end.converge(described_recipe)
   end
 
