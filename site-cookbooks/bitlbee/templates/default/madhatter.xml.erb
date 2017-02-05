@@ -1,0 +1,10 @@
+<user nick="madhatter" password="<%= @passwords['bitlbee'] %>" version="1">
+	<setting name="last_version">196613</setting>
+  <account protocol="oscar" handle="<%= node['bitlbee']['icq'] %>" password="<%= @passwords['icq'] %>" autoconnect="1" tag="icq" server="login.icq.com">
+	</account>
+  <account protocol="jabber" handle="<%= node['bitlbee']['jabber'] %>" password="<%= @passwords['jabber'] %>" autoconnect="1" tag="jabber">
+	</account>
+	<channel name="&amp;bitlbee" type="control">
+		<setting name="auto_join">true</setting>
+	</channel>
+</user>

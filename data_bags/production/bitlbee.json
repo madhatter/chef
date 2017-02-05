@@ -1,0 +1,21 @@
+{
+  "id": "bitlbee",
+  "bitlbee": {
+    "encrypted_data": "eQmFl/QOstm/NJGaUDpbu98fLG6hXTfB6WaMOVrGGjONhiRuIWL/7Q9URpCz\n/T4z\n",
+    "iv": "xJh/nwpHa3/QmKXgQamUJQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "icq": {
+    "encrypted_data": "S0ytIR9a6wS9XXzebpaeeKItob2dDqJY6tXfet+eWyMMDrCli5ZzglmLtgQQ\n4Sjh\n",
+    "iv": "Qm/EYxfbStLEEG1jW9Z6Qw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "jabber": {
+    "encrypted_data": "XL7vY9c0M+rEDWsLIPVyUcMmhUGkJ1i8Q1QfTbyjq1xiWQPwqEL/PzcQmVPo\nPJz6\n",
+    "iv": "VFzn72jGHVyzjDDk2M3kHw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

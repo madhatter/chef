@@ -9,6 +9,11 @@ PATH
     base (0.0.1)
 
 PATH
+  remote: site-cookbooks/bitlbee
+  specs:
+    bitlbee (0.0.1)
+
+PATH
   remote: site-cookbooks/docker
   specs:
     docker (0.0.1)
@@ -36,6 +41,7 @@ PATH
 
 DEPENDENCIES
   base (>= 0)
+  bitlbee (>= 0)
   docker (>= 0)
   iptables-ng (~> 2.2.8)
   irssi (>= 0)

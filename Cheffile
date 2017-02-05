@@ -17,6 +17,9 @@ site 'https://supermarket.getchef.com/api/v1'
 cookbook 'base',
   :path => 'site-cookbooks/base'
 
+cookbook 'bitlbee',
+  :path => 'site-cookbooks/bitlbee'
+
 cookbook 'docker',
   :path => 'site-cookbooks/docker'
 
