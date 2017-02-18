@@ -1,7 +1,7 @@
 SITE
   remote: https://supermarket.getchef.com/api/v1
   specs:
-    iptables-ng (2.2.8)
+    iptables-ng (3.0.0)
 
 PATH
   remote: site-cookbooks/base
@@ -43,7 +43,7 @@ DEPENDENCIES
   base (>= 0)
   bitlbee (>= 0)
   docker (>= 0)
-  iptables-ng (~> 2.2.8)
+  iptables-ng (~> 3.0.0)
   irssi (>= 0)
   letsencrypt (>= 0)
   nostalgix_nginx (>= 0)
