@@ -53,3 +53,11 @@ end
     action :create
   end
 end
+
+cookbook_file "/home/#{node['irssi']['user']}/.irssi/startup" do
+  source "startup"
+  owner node['irssi']['user']
+  group node['irssi']['user']
+  mode '0644'
+  action :create
+end
