@@ -13,8 +13,7 @@ secret = Chef::EncryptedDataBagItem.load_secret(node['data_bag_secret'])
 passwords = Chef::EncryptedDataBagItem.load('production', 'irssi', secret)
 
 # workaround to have the right owner/group for all leafs of recursive paths
-%W{ /home/#{node['irssi']['user']}/.irssi /home/#{node['irssi']['user']}/.irssi/scripts 
-    /home/#{node['irssi']['user']}/.irssi/themes }.each do |path|
+%W{ /home/#{node['irssi']['user']}/.irssi /home/#{node['irssi']['user']}/.irssi/scripts }.each do |path|
   directory path do
     owner "#{node['irssi']['user']}"
     group node['irssi']['user']
@@ -46,7 +45,7 @@ end
 end
 
 %w{ arvid.theme  default.theme  madhatter.theme}.each do |theme|
-  cookbook_file "/home/#{node['irssi']['user']}/.irssi/themes/#{theme}" do
+  cookbook_file "/home/#{node['irssi']['user']}/.irssi/#{theme}" do
     source "themes/#{theme}"
     owner node['irssi']['user']
     group node['irssi']['user']
