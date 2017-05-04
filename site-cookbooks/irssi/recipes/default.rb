@@ -43,3 +43,13 @@ end
     action :create
   end
 end
+
+%w{ arvid.theme  default.theme  madhatter.theme}.each do |theme|
+  cookbook_file "/home/#{node['irssi']['user']}/.irssi/themes/#{theme}" do
+    source "themes/#{theme}"
+    owner node['irssi']['user']
+    group node['irssi']['user']
+    mode '0644'
+    action :create
+  end
+end
