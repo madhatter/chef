@@ -1,20 +1,20 @@
 {
   "id": "irssi",
   "freenode": {
-    "encrypted_data": "HQhdHhpq3XXam+Hr3tOFEhw4SB4DR+EAE+QSzHATcSaS7LQ/4Dx1IBUmx7EO\ncEMp\n",
-    "iv": "maApoppRN+cjxnOtiWBDxA==\n",
+    "encrypted_data": "L/aF9IyDpjSBZFjrSUiB3joCiiytjRJrcxEMLNKFm6NmChu0SWdXt0GD8ndM\nZI6U\n",
+    "iv": "sUkMkr/XJvrtTqexXYHMiA==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "oftc": {
-    "encrypted_data": "nVAeuUev2sPfxBADWDENf0YTflajeMHLd+LSCr9K/Ig=\n",
-    "iv": "dxrSs3fs4YhHevqaE5azgw==\n",
+    "encrypted_data": "DtSN8pjv1ki6DRT7nmeHDZALQjezqdi+S2xInII9QLc=\n",
+    "iv": "ylj462hddpLBwMoHzWymJw==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "bitlbee": {
-    "encrypted_data": "Xs7mudY7opcjSy4Ed/BNKAtMRTtIIGhjA3g+71tQqfk=\n",
-    "iv": "s7QNGHF2VnSiCeCH5W24DQ==\n",
+    "encrypted_data": "tdgpiCGbJv5LfKlo5TqF1zmPbo/8pRfD/XVM/ZI6yso=\n",
+    "iv": "npIalOPtpKvnE1/XR0b3Rg==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }
