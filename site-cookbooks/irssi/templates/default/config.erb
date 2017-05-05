@@ -44,13 +44,20 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
   },
-<% end %>
+  {
+    address = "localhost";
+    chatnet = "bitlbee";
+    port = "6667";
+    autoconnect = "no";
+  },
+<% else %>
   {
     address = "localhost";
     chatnet = "bitlbee";
     port = "6667";
     autoconnect = "yes";
   },
+<% end %>
 );
 
 chatnets = {
