@@ -34,6 +34,11 @@ PATH
     nostalgix_nginx (0.0.1)
 
 PATH
+  remote: site-cookbooks/postfix
+  specs:
+    postfix (0.0.1)
+
+PATH
   remote: site-cookbooks/tor
   specs:
     tor (0.0.1)
@@ -47,5 +52,6 @@ DEPENDENCIES
   irssi (>= 0)
   letsencrypt (>= 0)
   nostalgix_nginx (>= 0)
+  postfix (>= 0)
   tor (>= 0)
 

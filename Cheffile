@@ -35,4 +35,7 @@ cookbook 'tor',
 cookbook 'nostalgix_nginx',
   :path => 'site-cookbooks/nostalgix_nginx'
 
+cookbook 'postfix',
+  :path => 'site-cookbooks/postfix'
+
 cookbook 'iptables-ng', '~> 3.0.0'
