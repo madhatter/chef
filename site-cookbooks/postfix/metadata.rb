@@ -1,0 +1,11 @@
+name 'postfix'
+maintainer 'Arvid Warnecke'
+maintainer_email 'madhatter@nostalgix.org'
+license 'BSD'
+description 'Installs and configures postfix'
+long_description 'Postfix configuration for nostalgix.org'
+source_url 'https://github.com/madhatter/chef'
+issues_url 'https://github.com/madhatter/chef/issues'
+version '0.0.1'
+
+supports 'arch'
