@@ -1,6 +1,6 @@
 servers = (
 <% if node['irssi']['work'] == false %>
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
@@ -56,7 +56,7 @@ servers = (
     chatnet = "bitlbee";
     port = "6667";
     autoconnect = "yes";
-  },
+  }
 <% end %>
 );
 
@@ -321,7 +321,7 @@ ignores = (
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#hadoop" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#jekyll" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#linux.de" ); },
-  { 
+  {
     level = "JOINS PARTS QUITS MODES";
     channels = ( "#archlinux.de" );
   },
@@ -341,7 +341,7 @@ ignores = (
     channels = ( "#learnchef" );
   },
   { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#chef" ); },
-  { 
+  {
     level = "JOINS PARTS QUITS MODES NICKS";
     channels = ( "#docker" );
   },
@@ -355,7 +355,7 @@ ignores = (
   },
   { level = "JOINS PARTS QUITS"; channels = ( "#tmux" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#git" ); },
-  { 
+  {
     level = "JOINS PARTS QUITS MODES NICKS";
     channels = ( "#mesos" );
   }
