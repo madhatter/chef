@@ -7,4 +7,8 @@ describe 'postfix::default' do
   it 'installs postfix' do
     expect(chef_run).to install_package('postfix')
   end
+
+  it 'creates master.cf file for a user' do
+    expect(chef_run).to create_cookbook_file('/etc/postfix/master.cf')
+  end
 end
