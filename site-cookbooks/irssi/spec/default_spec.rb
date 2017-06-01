@@ -56,4 +56,14 @@ describe 'irssi::default' do
       )
     end
   end
+
+  it 'creates some theme configuration files' do
+    %w{ arvid.theme default.theme madhatter.theme }.each do |theme|
+      expect(chef_run).to create_cookbook_file("/home/horst/.irssi/#{theme}").with(
+        owner: 'horst',
+        group: 'horst',
+        mode: '0644',
+      )
+    end
+  end
 end
