@@ -9,3 +9,11 @@ cookbook_file '/etc/postfix/master.cf' do
   mode '0644'
   action :create
 end
+
+template '/etc/postfix/main.cf' do
+  source 'main.cf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
