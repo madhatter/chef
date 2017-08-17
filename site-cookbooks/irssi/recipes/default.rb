@@ -32,7 +32,7 @@ template "/home/#{node['irssi']['user']}/.irssi/config" do
 end
 
 %w{ adv_windowlist.pl chanshare.pl dccstat.pl hilightwin.pl keepnick.pl
-    notonline.pl autorealname.pl country.pl friends.pl irssinotifier.pl
+    notonline.pl autorealname.pl country.pl irssinotifier.pl
     nickcolor.pl title.pl
   }.each do |file|
   cookbook_file "/home/#{node['irssi']['user']}/.irssi/scripts/#{file}" do

@@ -280,9 +280,21 @@ settings = {
 };
 
 notifies = {
-  upp = { away_check = "yes"; ircnets = ( "freenode", "IRCnet" ); };
-  BrungS = { away_check = "yes"; ircnets = ( "freenode" ); };
-  Lurchi = { away_check = "yes"; ircnets = ( "freenode" ); };
+  upp = {
+    away_check = "yes";
+    idle_check_time = "20";
+    ircnets = ( "freenode", "IRCnet" ); 
+  };
+  BrungS = {
+    away_check = "yes";
+    idle_check_time = "20";
+    ircnets = ( "freenode" );
+  };
+  Lurchi = {
+    away_check = "yes";
+    idle_check_time = "20";
+    ircnets = ( "freenode" );
+  };
   SrphicDvltry = {
     away_check = "yes";
     idle_check_time = "20";
@@ -298,8 +310,11 @@ notifies = {
     idle_check_time = "20";
     ircnets = ( "freenode" );
   };
-  hrkfdn = { away_check = "yes"; ircnets = ( "freenode" ); };
-  ette = { };
+  ette = { 
+    away_check = "yes";
+    idle_check_time = "20";
+    ircnets = ( "freenode" );
+  };
 };
 <% if node['irssi']['work'] == false %>
 ignores = (

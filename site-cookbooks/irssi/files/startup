@@ -4,7 +4,6 @@
 /run hilightwin.pl
 /run nickcolor.pl
 /run autorealname.pl
-/run friends.pl
 /run title.pl
 /run chanshare.pl
 /run notonline.pl
