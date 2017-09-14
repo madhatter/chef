@@ -17,3 +17,11 @@ template '/etc/postfix/main.cf' do
   mode '0644'
   action :create
 end
+
+template '/etc/postfix/aliases' do
+  source 'aliases.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
