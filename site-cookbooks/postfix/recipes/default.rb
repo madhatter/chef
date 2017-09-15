@@ -2,6 +2,10 @@ package 'postfix' do
   action :install
 end
 
+package 'cyrus-sasl' do
+  action :install
+end
+
 cookbook_file '/etc/postfix/master.cf' do
   source 'master.cf'
   owner 'root'

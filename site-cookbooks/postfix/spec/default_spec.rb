@@ -12,6 +12,10 @@ describe 'postfix::default' do
     expect(chef_run).to install_package('postfix')
   end
 
+  it 'installs cyrus-sasl' do
+    expect(chef_run).to install_package('cyrus-sasl')
+  end
+
   it 'creates master.cf file' do
     expect(chef_run).to create_cookbook_file('/etc/postfix/master.cf')
   end

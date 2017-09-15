@@ -704,3 +704,8 @@ smtpd_sender_restrictions = permit_mynetworks,
 smtpd_client_restrictions = permit_mynetworks,
         permit_sasl_authenticated,
         reject_unknown_client_hostname
+
+## SASL Auth Settings
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_local_domain = $myhostname
+broken_sasl_auth_clients = yes
