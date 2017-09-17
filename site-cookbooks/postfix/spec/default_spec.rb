@@ -31,4 +31,12 @@ describe 'postfix::default' do
     expect(chef_run).to render_file('/etc/postfix/aliases')
       .with_content(/herbert/)
   end
+
+  it 'creates the sasl2 directory' do
+    expect(chef_run).to create_directory('/etc/sasl2')
+  end
+
+  it 'creates smptd.conf file' do
+    expect(chef_run).to create_cookbook_file('/etc/sasl2/smtpd.conf')
+  end
 end

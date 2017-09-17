@@ -29,3 +29,18 @@ template '/etc/postfix/aliases' do
   mode '0644'
   action :create
 end
+
+directory '/etc/sasl2' do
+  action :create
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
+cookbook_file '/etc/sasl2/smtpd.conf' do
+  source 'smtpd.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
