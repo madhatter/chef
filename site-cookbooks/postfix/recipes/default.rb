@@ -37,8 +37,8 @@ directory '/etc/sasl2' do
   mode '0755'
 end
 
-cookbook_file '/etc/sasl2/smtpd.conf' do
-  source 'smtpd.conf'
+template '/etc/sasl2/smtpd.conf' do
+  source 'smtpd.conf.erb'
   owner 'root'
   group 'root'
   mode '0644'
@@ -50,5 +50,9 @@ cookbook_file '/etc/sasldb2' do
   owner 'postfix'
   group 'root'
   mode '0600'
-  action :create
+  if node['postfix']['sasl_provider'] == 'sasldb'
+    action :create
+  else
+    action :delete
+  end
 end

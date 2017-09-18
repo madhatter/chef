@@ -36,15 +36,53 @@ describe 'postfix::default' do
     expect(chef_run).to create_directory('/etc/sasl2')
   end
 
-  it 'creates smptd.conf file' do
-    expect(chef_run).to create_cookbook_file('/etc/sasl2/smtpd.conf')
+  context 'sasl sasldb' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+        node.normal['postfix']['sasl_provider'] = 'sasldb'
+      end.converge(described_recipe)
+    end
+
+    it 'creates smptd.conf file' do
+      expect(chef_run).to create_template('/etc/sasl2/smtpd.conf')
+    end
+
+    it 'configures sasl with sasldb' do
+      expect(chef_run).to render_file('/etc/sasl2/smtpd.conf')
+        .with_content(/auxprop/)
+    end
+
+    it 'creates the sasldb2' do
+      expect(chef_run).to create_cookbook_file('/etc/sasldb2').with(
+        owner: 'postfix',
+        group: 'root',
+        mode: '0600',
+      )
+    end
   end
 
-  it 'creates the sasldb2' do
-    expect(chef_run).to create_cookbook_file('/etc/sasldb2').with(
-      owner: 'postfix',
-      group: 'root',
-      mode: '0600',
-    )
+  context 'sasl pam' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+        node.normal['postfix']['sasl_provider'] = 'pam'
+      end.converge(described_recipe)
+    end
+  
+    it 'creates smptd.conf file' do
+      expect(chef_run).to create_template('/etc/sasl2/smtpd.conf')
+    end
+
+    it 'configures sasl with pam' do
+      expect(chef_run).to render_file('/etc/sasl2/smtpd.conf')
+        .with_content(/saslauthd/)
+    end
+
+    it 'does not create the sasldb2' do
+      expect(chef_run).to delete_cookbook_file('/etc/sasldb2').with(
+        owner: 'postfix',
+        group: 'root',
+        mode: '0600',
+      )
+    end
   end
 end
