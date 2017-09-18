@@ -2899,6 +2899,7 @@
   },
   "run_list": [
     "recipe[irssi]",
+    "recipe[letsencrypt]",
     "recipe[postfix]"
   ]
 }
