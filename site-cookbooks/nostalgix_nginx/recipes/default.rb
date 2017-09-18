@@ -15,6 +15,14 @@ link '/etc/nginx/sites-enabled/default' do
   action :delete
 end
 
+cookbook_file '/etc/nginx/nginx.conf' do
+  source 'nginx.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
 node['nginx']['sites'].each do |site| 
   data_bag = data_bag_item('nginx', site)
   
