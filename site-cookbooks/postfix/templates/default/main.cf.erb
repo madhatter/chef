@@ -223,7 +223,7 @@ mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 #
 #local_recipient_maps = unix:passwd.byname $alias_maps
 #local_recipient_maps = proxy:unix:passwd.byname $alias_maps
-#local_recipient_maps =
+local_recipient_maps =
 
 # The unknown_local_recipient_reject_code specifies the SMTP server
 # response code when a recipient domain matches $mydestination or
@@ -528,6 +528,7 @@ mail_spool_directory = /var/spool/mail
 #luser_relay = $user@other.host
 #luser_relay = $local@other.host
 #luser_relay = admin+$local
+luser_relay = <%= node['postfix']['user'] %>
 
 # JUNK MAIL CONTROLS
 #
