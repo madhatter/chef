@@ -2901,6 +2901,7 @@
     "recipe[irssi]",
     "recipe[nostalgix_nginx]",
     "recipe[letsencrypt]",
-    "recipe[postfix]"
+    "recipe[postfix]",
+    "recipe[postfix::dovecot]"
   ]
 }
