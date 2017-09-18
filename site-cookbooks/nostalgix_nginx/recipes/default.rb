@@ -2,6 +2,15 @@ package 'nginx' do
   action :install
 end
 
+['/etc/nginx/sites-available', '/etc/nginx/sites-enabled'].each do |dir|
+  directory "#{dir}" do
+    action :create
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
+end
+
 link '/etc/nginx/sites-enabled/default' do
   action :delete
 end
