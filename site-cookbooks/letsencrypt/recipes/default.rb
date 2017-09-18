@@ -2,6 +2,10 @@
 #
 # Initially create certificate with letsencrypt-auto certonly -d <domain> --debug
 
+package 'cronie' do
+  action :install
+end
+
 directory node['letsencrypt']['dir'] do
   action :create
   mode '0755'
