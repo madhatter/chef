@@ -6,6 +6,10 @@ package 'cronie' do
   action :install
 end
 
+package 'certbot' do
+  action :install
+end
+
 directory node['letsencrypt']['dir'] do
   action :create
   mode '0755'
