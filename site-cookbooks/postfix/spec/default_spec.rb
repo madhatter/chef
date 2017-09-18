@@ -86,3 +86,16 @@ describe 'postfix::default' do
     end
   end
 end
+
+describe 'postfix::dovecot' do
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new(platform: 'arch', version: '4.5.4-1-ARCH') do |node|
+      node.normal['postfix']['server_name'] = 'mail.horst.org'
+      node.normal['postfix']['user'] = 'herbert'
+    end.converge(described_recipe)
+  end
+
+  it 'installs dovecot' do
+    expect(chef_run).to install_package('dovecot')
+  end
+end
