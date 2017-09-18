@@ -713,9 +713,10 @@ smtpd_sasl_type = cyrus
 smtpd_sasl_local_domain = $myhostname
 broken_sasl_auth_clients = yes
 cyrus_sasl_config_path = /etc/sasl2/
+smtpd_sasl_security_options = noanonymous
 
 # SASL TLS
 smtp_use_tls = yes
 smtpd_tls_security_level = may
-smtpd_tls_cert_file = /etc/letsencrypt/live/brutal.nostalgix.org/cert.pem
+smtpd_tls_cert_file = /etc/letsencrypt/live/brutal.nostalgix.org/fullchain.pem
 smtpd_tls_key_file = /etc/letsencrypt/live/brutal.nostalgix.org/privkey.pem
