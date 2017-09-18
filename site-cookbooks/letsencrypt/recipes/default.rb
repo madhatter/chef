@@ -13,6 +13,13 @@ directory node['letsencrypt']['dir'] do
   group 'root'
 end
 
+directory '/var/log/letsencrypt' do
+  action :create
+  mode '0755'
+  owner 'root'
+  group 'root'
+end
+
 git 'letsencrypt' do
   repository node['letsencrypt']['repository']
   destination node['letsencrypt']['dir']
