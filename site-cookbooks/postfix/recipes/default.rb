@@ -44,3 +44,11 @@ cookbook_file '/etc/sasl2/smtpd.conf' do
   mode '0644'
   action :create
 end
+
+cookbook_file '/etc/sasldb2' do
+  source 'sasldb2'
+  owner 'postfix'
+  group 'root'
+  mode '0600'
+  action :create
+end

@@ -39,4 +39,12 @@ describe 'postfix::default' do
   it 'creates smptd.conf file' do
     expect(chef_run).to create_cookbook_file('/etc/sasl2/smtpd.conf')
   end
+
+  it 'creates the sasldb2' do
+    expect(chef_run).to create_cookbook_file('/etc/sasldb2').with(
+      owner: 'postfix',
+      group: 'root',
+      mode: '0600',
+    )
+  end
 end
