@@ -708,15 +708,17 @@ smtpd_client_restrictions = permit_mynetworks,
 
 ## SASL Auth Settings
 smtpd_sasl_auth_enable = yes
-smtpd_sasl_path = smtpd
-#smtpd_sasl_type = cyrus
+#smtpd_sasl_path = smtpd
+smtpd_sasl_path = private/auth
+smtpd_sasl_type = dovecot
 smtpd_sasl_local_domain = $myhostname
 broken_sasl_auth_clients = yes
-cyrus_sasl_config_path = /etc/sasl2/
+#cyrus_sasl_config_path = /etc/sasl2/
 smtpd_sasl_security_options = noanonymous
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination
 
 # SASL TLS
-smtp_use_tls = yes
-smtpd_tls_security_level = may
-smtpd_tls_cert_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/fullchain.pem
-smtpd_tls_key_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/privkey.pem
+#smtp_use_tls = yes
+#smtpd_tls_security_level = may
+#smtpd_tls_cert_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/fullchain.pem
+#smtpd_tls_key_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/privkey.pem
