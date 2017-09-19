@@ -35,6 +35,14 @@ cookbook_file '/etc/dovecot/conf.d/15-lda.conf' do
   action :create
 end
 
+cookbook_file '/etc/dovecot/conf.d/10-master.conf' do
+  source 'dovecot/10-master.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
 #service 'dovecot' do
 #  action [:enable, :start]
 #end
