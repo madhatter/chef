@@ -57,6 +57,14 @@ cookbook_file '/etc/sasldb2' do
   end
 end
 
+cookbook_file '/etc/postfix/virtual' do
+  source 'virtual'
+  owner 'postfix'
+  group 'postfix'
+  mode '0644'
+  action :create
+end
+
 service 'postfix' do
   action [:enable, :start]
 end
