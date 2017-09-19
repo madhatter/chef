@@ -718,5 +718,5 @@ smtpd_sasl_security_options = noanonymous
 # SASL TLS
 smtp_use_tls = yes
 smtpd_tls_security_level = may
-smtpd_tls_cert_file = /etc/letsencrypt/live/<%= ['postfix']['server_name'] %>/fullchain.pem
-smtpd_tls_key_file = /etc/letsencrypt/live/<%= ['postfix']['server_name'] %>/privkey.pem
+smtpd_tls_cert_file = /etc/letsencrypt/live/<%= node['postfix']['server_name'] %>/fullchain.pem
+smtpd_tls_key_file = /etc/letsencrypt/live/<%= node['postfix']['server_name'] %>/privkey.pem
