@@ -11,6 +11,14 @@ if ::Dir['/etc/dovecot/conf.d/*'].empty?
   end
 end
 
+template '/etc/dovecot/conf.d/10-ssl.conf' do
+  source 'dovecot/ssl.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
 #service 'dovecot' do
 #  action [:enable, :start]
 #end
