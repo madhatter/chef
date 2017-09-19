@@ -19,6 +19,22 @@ template '/etc/dovecot/conf.d/10-ssl.conf' do
   action :create
 end
 
+cookbook_file '/etc/dovecot/conf.d/10-mail.conf' do
+  source 'dovecot/10-mail.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
+cookbook_file '/etc/dovecot/conf.d/15-lda.conf' do
+  source 'dovecot/15-lda.conf'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  action :create
+end
+
 #service 'dovecot' do
 #  action [:enable, :start]
 #end
