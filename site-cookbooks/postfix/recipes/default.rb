@@ -56,3 +56,7 @@ cookbook_file '/etc/sasldb2' do
     action :delete
   end
 end
+
+service 'postfix' do
+  action [:enable, :start]
+end
