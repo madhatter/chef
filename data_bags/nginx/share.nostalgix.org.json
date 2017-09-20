@@ -1,1 +1,16 @@
-{"name":"data_bag_item_nginx_share.nostalgix.org","json_class":"Chef::DataBagItem","chef_type":"data_bag_item","data_bag":"nginx","raw_data":{"id":"share.nostalgix.org","server_name":"share.nostalgix.org","http_port":"80","access_log":"/var/log/nginx/share.access.log","root":"/var/customers/webs/arvid/share","location":{"/":"autoindex on"}}}
+{
+    "name": "data_bag_item_nginx_share.nostalgix.org",
+    "json_class": "Chef::DataBagItem",
+    "chef_type": "data_bag_item",
+    "data_bag": "nginx",
+    "raw_data": {
+        "id": "share.nostalgix.org",
+        "server_name": "share.nostalgix.org",
+        "http_port": "80",
+        "access_log": "/var/log/nginx/share.access.log",
+        "root": "/var/customers/webs/arvid/share",
+        "location": {
+            "/": "autoindex on"
+        }
+    }
+}
