@@ -9,7 +9,7 @@ cookbook_file '/etc/postfix/master.cf' do
   mode '0644'
   action :create
   notifies :restart, 'service[postfix]'
-  notifies :restart, 'service[postgrey]' if node.recipe?['postfix:postgrey']
+  #notifies :restart, 'service[postgrey]' if node.recipe?['postfix:postgrey']
 end
 
 template '/etc/postfix/main.cf' do

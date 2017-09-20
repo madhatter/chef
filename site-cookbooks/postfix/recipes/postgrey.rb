@@ -1,3 +1,5 @@
+include_recipe 'postfix::default'
+
 package 'postgrey' do
   action :install
 end
