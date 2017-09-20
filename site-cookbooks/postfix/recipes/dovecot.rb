@@ -43,14 +43,6 @@ cookbook_file '/etc/dovecot/conf.d/10-master.conf' do
   action :create
 end
 
-cookbook_file '/etc/dovecot/conf.d/10-master.conf' do
-  source 'dovecot/10-master.conf'
-  owner 'root'
-  group 'root'
-  mode '0644'
-  action :create
-end
-
 cookbook_file '/etc/pam.d/dovecot' do
   source 'dovecot/pam_dovecot'
   owner 'root'
