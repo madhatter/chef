@@ -723,5 +723,5 @@ smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, reject_
 # SASL TLS
 smtp_use_tls = yes
 smtpd_tls_security_level = may
-smtpd_tls_cert_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/fullchain.pem
-smtpd_tls_key_file = /etc/letsencrypt/live/<%= node['fqdn'] %>/privkey.pem
+smtpd_tls_cert_file = /etc/letsencrypt/live/<%= node['postfix']['server_name'] %>/fullchain.pem
+smtpd_tls_key_file = /etc/letsencrypt/live/<%= node['postfix']['server_name'] %>/privkey.pem
