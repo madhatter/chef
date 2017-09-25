@@ -17,7 +17,7 @@
       "work": false
     },
 	"user": {
-      "users": ['madhatter', 'deployer']
+      "users": ["madhatter", "deployer"]
 	}
   },
   "automatic": {
