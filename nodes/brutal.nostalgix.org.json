@@ -15,7 +15,10 @@
     "irssi": {
       "user": "madhatter",
       "work": false
-    }
+    },
+	"user": {
+		"users": ['madhatter', 'deployer']
+	}
   },
   "automatic": {
     "kernel": {
@@ -2898,6 +2901,7 @@
     }
   },
   "run_list": [
+    "recipe[base::user]",
     "recipe[irssi]",
     "recipe[nostalgix_nginx]",
     "recipe[letsencrypt]",
