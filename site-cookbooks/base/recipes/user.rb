@@ -19,7 +19,3 @@ node['user']['users'].each do |name|
     action :create
   end
 end
-
-pacman_aur 'jekyll' do
-  action :install
-end
