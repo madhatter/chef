@@ -7,6 +7,12 @@
       ]
     },
     "data_bag_secret": "/etc/chef/encrypted_data_bag_secret",
+	  "user": {
+      "users": [
+        "madhatter",
+        "deployer"
+      ]
+	  },
     "tags": [
 
     ]
@@ -15,10 +21,7 @@
     "irssi": {
       "user": "madhatter",
       "work": false
-    },
-	"user": {
-      "users": ["madhatter", "deployer"]
-	}
+    }
   },
   "automatic": {
     "kernel": {
