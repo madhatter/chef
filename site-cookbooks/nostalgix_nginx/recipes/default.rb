@@ -2,9 +2,20 @@ package 'nginx' do
   action :install
 end
 
+group 'www-data' do
+  action :create
+end
+
+user 'www-data' do
+  action :create
+  group 'www-data'
+  shell '/bin/sh'
+  manage_home false
+end
+
 node['nginx']['www_users'].each do |user|
   group 'www-data' do
-    action [:create, :modify]
+    action :modify
     members user
     append true
   end
