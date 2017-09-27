@@ -2,6 +2,12 @@ package 'nginx' do
   action :install
 end
 
+group 'www-data' do
+  action :modify
+  members 'maintenance'
+  append true
+end
+
 ['/etc/nginx/sites-available', '/etc/nginx/sites-enabled'].each do |dir|
   directory "#{dir}" do
     action :create
@@ -38,6 +44,12 @@ node['nginx']['sites'].each do |site|
   link "/etc/nginx/sites-enabled/#{site}" do
     to "/etc/nginx/sites-available/#{site}"
     link_type :symbolic
+  end
+
+  directory "#{data_bag['root_dir']}" do
+    owner 'www-data'
+    group 'www-data'
+    mode '0755'
   end
 end
 
