@@ -2,10 +2,12 @@ package 'nginx' do
   action :install
 end
 
-group 'www-data' do
-  action :modify
-  members 'maintenance'
-  append true
+node['nginx']['www_users'].each do |user|
+  group 'www-data' do
+    action :modify
+    members user
+    append true
+  end
 end
 
 ['/etc/nginx/sites-available', '/etc/nginx/sites-enabled'].each do |dir|
