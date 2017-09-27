@@ -4,7 +4,7 @@ end
 
 node['nginx']['www_users'].each do |user|
   group 'www-data' do
-    action :modify
+    action [:create, :modify]
     members user
     append true
   end
