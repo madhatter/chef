@@ -1,9 +1,7 @@
 AutomapHostsSuffixes .onion,.exit
 AutomapHostsOnResolve 1
-TransPort 9040
-TransListenAddress 10.10.0.1
-DNSPort 53
-DNSListenAddress 10.10.0.1
+TransPort 10.10.0.1:9040
+DNSPort 10.10.0.1:53
 User tor
 Log notice syslog
 DataDirectory /var/lib/tor
@@ -13,3 +11,6 @@ ExitPolicy reject *:*
 PublishServerDescriptor 0
 #ORPort 9001
 StrictNodes 1
+ExitNodes $B01B7973207B1FD2F71D51D1B51B89EE77035CF4,
+$1685874B7B91E5C6184CF7CC5ADF8D983F150AD5,
+$9EAD5B2D3DBD96DBC80DCE423B0C345E920A758D
