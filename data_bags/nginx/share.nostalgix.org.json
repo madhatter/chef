@@ -8,7 +8,7 @@
         "server_name": "share.nostalgix.org",
         "http_port": "80",
         "access_log": "/var/log/nginx/share.access.log",
-        "root": "/var/customers/webs/arvid/share",
+        "root": "/var/www/share",
         "location": {
             "/": "autoindex on"
         }
