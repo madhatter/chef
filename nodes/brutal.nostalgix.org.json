@@ -4,7 +4,7 @@
     "nginx": {
       "sites": [
         "nostalgix",
-		"shared.nostalgix.org"
+		"share.nostalgix.org"
       ]
     },
     "data_bag_secret": "/etc/chef/encrypted_data_bag_secret",
