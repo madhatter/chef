@@ -11,7 +11,7 @@
         "ssl_certificate": "/etc/letsencrypt/live/www.nostalgix.org/fullchain.pem",
         "ssl_certificate_key": "/etc/letsencrypt/live/www.nostalgix.org/privkey.pem",
         "access_log": "/var/log/nginx/nostalgix.access.log",
-        "root_dir": "/var/www",
+        "root_dir": "/var/www/blog",
         "location": {
             "/": "index  index.html index.htm"
         }
