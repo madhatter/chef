@@ -3,7 +3,8 @@
   "normal": {
     "nginx": {
       "sites": [
-        "nostalgix"
+        "nostalgix",
+		"shared.nostalgix.org"
       ]
     },
     "data_bag_secret": "/etc/chef/encrypted_data_bag_secret",
