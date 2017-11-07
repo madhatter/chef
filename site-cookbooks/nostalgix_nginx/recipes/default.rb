@@ -62,7 +62,7 @@ node['nginx']['sites'].each do |site|
   directory "#{data_bag['root_dir']}" do
     owner 'www-data'
     group 'www-data'
-    mode '0755'
+    mode '0775'
   end
 end
 
