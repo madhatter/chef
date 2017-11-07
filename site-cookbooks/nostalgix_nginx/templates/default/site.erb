@@ -8,9 +8,9 @@ server {
 
 <% if @data_bag['ssl_certificate'] %>
 server {
-  listen   <%= @data_bag['http_port'] %>; ## listen for ipv4
-  server_name  <%= @data_bag['server_name'] %>;
-  return 301 https://<%= @data_bag['server_name'] %>$request_uri;
+  listen      <%= @data_bag['http_port'] %>;
+  server_name <%= @data_bag['server_name'] %>;
+  return      301 https://<%= @data_bag['server_name'] %>$request_uri;
 }
 <% end %>
 
