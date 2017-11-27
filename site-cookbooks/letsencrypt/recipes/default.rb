@@ -47,3 +47,7 @@ cron 'Renew letsencrypt certificate' do
   user 'root'
   action :create
 end
+
+service 'cronie' do
+  action [:enable, :start]
+end
