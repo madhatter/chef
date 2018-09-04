@@ -1,3 +1,7 @@
+package 'rsync' do
+  action :install
+end
+
 user 'deployer' do
   gid 'wheel'
   home "/home/#{name}"
