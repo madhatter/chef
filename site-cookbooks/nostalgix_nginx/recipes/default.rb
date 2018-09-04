@@ -1,5 +1,7 @@
-package 'nginx' do
-  action :install
+%w{ nginx rsync }.each do |paket|
+  package paket do
+    action :install
+  end
 end
 
 group 'www-data' do
