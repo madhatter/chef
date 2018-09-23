@@ -2251,15 +2251,11 @@
       },
       "docker": {
         "version": "0.0.0"
-      },
-      "tor": {
-        "version": "0.0.0"
       }
     }
   },
   "run_list": [
     "recipe[base]",
-    "recipe[docker::registry]",
-    "recipe[tor::default]"
+    "recipe[docker::registry]"
   ]
 }
