@@ -318,62 +318,34 @@ notifies = {
 };
 <% if node['irssi']['work'] == false %>
 ignores = (
+  { mask = "Hatter"; level = "ALL"; },
   { level = "JOINS PARTS QUITS"; channels = ( "#ruby" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#awesome" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#irssi" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#debian.de" ); },
-  {
-    level = "JOINS PARTS QUITS MODES";
-    channels = ( "#ubuntu-de-offtopic" );
-  },
-  {
-    level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS";
-    channels = ( "#hbase" );
-  },
-  { level = "JOINS PARTS QUITS"; channels = ( "#vim" ); },
+  { level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS"; channels = ( "#hbase" ); },
+  { level = "JOINS PARTS QUITS MODES"; channels = ( "#vim" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#zsh" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#mutt" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#hadoop" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#jekyll" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#linux.de" ); },
-  {
-    level = "JOINS PARTS QUITS MODES";
-    channels = ( "#archlinux.de" );
-  },
+  { level = "JOINS PARTS QUITS MODES"; channels = ( "#archlinux.de" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#archlinux" ); },
-  {
-    level = "JOINS PARTS QUITS MODES";
-    channels = ( "#archlinux-offtopic" );
-  },
+  { level = "JOINS PARTS QUITS MODES"; channels = ( "#archlinux-offtopic" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#freenode" ); },
-  { mask = "Hatter"; level = "ALL"; },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#zfs" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#dwb" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#zfsonlinux" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "##c" ); },
-  {
-    level = "JOINS PARTS QUITS MODES NICKS";
-    channels = ( "#learnchef" );
-  },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#learnchef" ); },
   { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#chef" ); },
-  {
-    level = "JOINS PARTS QUITS MODES NICKS";
-    channels = ( "#docker" );
-  },
-  {
-    level = "JOINS PARTS QUITS MODES NICKS";
-    channels = ( "#kitchenci" );
-  },
-  {
-    level = "JOINS PARTS QUITS MODES NICKS";
-    channels = ( "#cloudera" );
-  },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#docker" ); },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#kitchenci" ); },
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#cloudera" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#tmux" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#git" ); },
-  {
-    level = "JOINS PARTS QUITS MODES NICKS";
-    channels = ( "#mesos" );
-  }
+  { level = "JOINS PARTS QUITS MODES NICKS"; channels = ( "#go-nuts" ); }
 );
 <% end %>
 windows = {
@@ -405,7 +377,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#hadoop";
+        name = "#go-nuts";
         tag = "freenode";
       }
     );
