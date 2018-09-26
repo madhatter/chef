@@ -6,8 +6,4 @@
 /run autorealname.pl
 /run title.pl
 /run chanshare.pl
-/run notonline.pl
-/run country.pl
-/run dccstat.pl
-/run keepnick.pl
 /run irssinotifier.pl

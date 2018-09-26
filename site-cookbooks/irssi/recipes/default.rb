@@ -44,7 +44,7 @@ end
   end
 end
 
-%w{ arvid.theme  default.theme  madhatter.theme}.each do |theme|
+%w{ arvid.theme  default.theme default2.theme  madhatter.theme}.each do |theme|
   cookbook_file "/home/#{node['irssi']['user']}/.irssi/#{theme}" do
     source "themes/#{theme}"
     owner node['irssi']['user']
