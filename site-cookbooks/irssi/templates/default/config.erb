@@ -22,6 +22,7 @@ servers = (
     chatnet = "IRCnet";
     port = "6667";
     use_ssl = "no";
+    autoconnect = "yes";
   },
   {
     address = "irc.oftc.net";
@@ -104,7 +105,7 @@ chatnets = {
     max_modes = "4";
     max_msgs = "1";
     max_whois = "1";
-    autosendcmd = "/^nick mca;/^msg nickserv identify <%= @passwords['oftc'] %>;wait -opn 2000";
+    autosendcmd = "/^nick madhatter;/^msg nickserv identify <%= @passwords['oftc_madhatter'] %>;wait -opn 2000";
   };
   quakenet = {
     type = "IRC";
@@ -218,23 +219,6 @@ statusbar = {
     };
   };
 };
-hilights = (
-  { text = "madhatter"; color = "%r"; nick = "yes"; word = "yes"; },
-  {
-    text = ".madhatter";
-    color = "%r";
-    nick = "yes";
-    word = "yes";
-    regexp = "yes";
-  },
-  {
-    text = "Arvid";
-    color = "%r";
-    nick = "yes";
-    word = "yes";
-    regexp = "yes";
-  }
-);
 
 settings = {
   core = {
@@ -252,10 +236,6 @@ settings = {
     beep_when_window_active = "no";
     use_status_window = "yes";
     beep_when_away = "no";
-    hilight_level = "DCCMSGS MSGS PUBLIC DCC CLIENTNOTICES ACTIONS\012NOTICES";
-    activity_hilight_level = "DCCMSGS MSGS";
-    hilight_color = "%R";
-    hilight_act_color = "%r";
     use_msgs_window = "no";
     reuse_unused_windows = "yes";
     autolog = "yes";
@@ -284,7 +264,7 @@ notifies = {
   upp = {
     away_check = "yes";
     idle_check_time = "20";
-    ircnets = ( "freenode", "IRCnet" ); 
+    ircnets = ( "freenode", "IRCnet" );
   };
   BrungS = {
     away_check = "yes";
@@ -311,7 +291,7 @@ notifies = {
     idle_check_time = "20";
     ircnets = ( "freenode" );
   };
-  ette = { 
+  ette = {
     away_check = "yes";
     idle_check_time = "20";
     ircnets = ( "freenode" );
@@ -324,7 +304,7 @@ ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#awesome" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#irssi" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#debian.de" ); },
-  { level = "CRAP MSGS NOTICES SNOTES CTCPS JOINS PARTS QUITS KICKS MODES TOPICS WALLOPS INVITES NICKS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS HILIGHTS"; channels = ( "#hbase" ); },
+  { level = "JOINS PARTS QUITS MODES"; channels = ( "#hbase" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#vim" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#zsh" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#mutt" ); },
@@ -420,16 +400,6 @@ windows = {
         chat_type = "IRC";
         name = "#vim";
         tag = "freenode";
-      }
-    );
-  };
-  10 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "&bitlbee";
-        tag = "localhost";
       }
     );
   };

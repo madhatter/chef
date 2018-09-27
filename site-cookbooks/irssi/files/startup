@@ -1,7 +1,6 @@
 /statusbar info disable
 /load perl
 /run adv_windowlist.pl
-/run hilightwin.pl
 /run nickcolor.pl
 /run autorealname.pl
 /run title.pl
