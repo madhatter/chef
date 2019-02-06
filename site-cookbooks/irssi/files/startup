@@ -5,4 +5,4 @@
 /run autorealname.pl
 /run title.pl
 /run chanshare.pl
-/run irssinotifier.pl
+/run hilightwin.pl
