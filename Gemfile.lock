@@ -109,7 +109,7 @@ GEM
     plist (3.2.0)
     proxifier (1.0.3)
     public_suffix (2.0.5)
-    rack (2.0.1)
+    rack (2.2.3)
     rake (11.1.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
@@ -161,4 +161,4 @@ DEPENDENCIES
   rake (~> 11.1.2)
 
 BUNDLED WITH
-   1.14.6
+   2.1.4
