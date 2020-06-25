@@ -10,5 +10,5 @@ gem "rack", ">= 2.1.4"
 
 group :test do
   gem 'chefspec', '~> 5.3.0'
-  gem 'rake', '~> 11.1.2'
+  gem 'rake', '~> 12.3.3'
 end
