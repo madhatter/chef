@@ -11,4 +11,3 @@ for somebody else.
 * rvmsudo bundle exec chef-client -z -c ~/client.rb
 * bundle exec knife solo data bag edit production irssi --secret-file
 <encrypted_data_bag_secret>
-
