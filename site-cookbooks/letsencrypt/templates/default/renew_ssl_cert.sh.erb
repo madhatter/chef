@@ -10,7 +10,7 @@ fi
 <% else %>
 systemctl stop nginx
 <% end %>
-<%= node['letsencrypt']['dir'] %>/letsencrypt-auto renew -nvv --standalone --debug > /var/log/letsencrypt/renew.log 2>&1
+USE_PYTHON_3=1 <%= node['letsencrypt']['dir'] %>/letsencrypt-auto renew -nvv --standalone --debug > /var/log/letsencrypt/renew.log 2>&1
 LE_STATUS=$?
 <% if node['platform_family'] == 'debian' %>
 /etc/init.d/nginx start
