@@ -488,6 +488,9 @@ mail_spool_directory = /var/spool/mail
 # subsequent line in master.cf.
 #mailbox_transport = cyrus
 
+# Increase the mailbox size
+mailbox_size_limit = 102400000
+
 # The fallback_transport specifies the optional transport in master.cf
 # to use for recipients that are not found in the UNIX passwd database.
 # This parameter has precedence over the luser_relay parameter.
